@@ -21,6 +21,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="addPoints:" destination="2" eventType="touchUpInside" id="H4W-g5-VOB"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yaL-fX-pMm">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -41,30 +44,60 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="retrievePoints:" destination="2" eventType="touchUpInside" id="ZTl-yM-zbp"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Points" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEq-DC-BSp">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cHS-V0-QWs">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="fN7-yn-xfz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textFieldended:" destination="2" eventType="editingDidEnd" id="rJh-Rq-Ffp"/>
+                                    <outlet property="delegate" destination="2" id="1an-vY-fwU"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QVX-AW-A0x">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="UeQ-5m-OWN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="2" id="Fu3-od-LAC"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="cHS-V0-QWs" firstAttribute="top" secondItem="3" secondAttribute="top" constant="25" id="4Uz-FQ-07a"/>
                             <constraint firstItem="dj6-QF-qHr" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="13" id="5Bp-jO-OUj"/>
-                            <constraint firstAttribute="bottom" secondItem="yaL-fX-pMm" secondAttribute="bottom" constant="212" id="ASk-NS-jLD"/>
+                            <constraint firstItem="dj6-QF-qHr" firstAttribute="top" secondItem="3" secondAttribute="top" constant="178" id="AaH-ej-JIH"/>
                             <constraint firstAttribute="bottom" secondItem="ZPv-dR-NbL" secondAttribute="bottom" constant="130" id="EVI-AC-JI8"/>
-                            <constraint firstItem="ZPv-dR-NbL" firstAttribute="leading" secondItem="yaL-fX-pMm" secondAttribute="leading" type="default" id="FJN-pn-0lQ"/>
+                            <constraint firstItem="ZPv-dR-NbL" firstAttribute="leading" secondItem="yaL-fX-pMm" secondAttribute="leading" type="user" id="FJN-pn-0lQ"/>
                             <constraint firstAttribute="trailing" secondItem="cEq-DC-BSp" secondAttribute="trailing" constant="73" id="Qml-18-jku"/>
+                            <constraint firstItem="yaL-fX-pMm" firstAttribute="top" secondItem="3" secondAttribute="top" constant="272" id="drs-gS-WvZ"/>
                             <constraint firstItem="yaL-fX-pMm" firstAttribute="leading" secondItem="dj6-QF-qHr" secondAttribute="leading" type="default" id="gwc-p1-Udd"/>
-                            <constraint firstItem="dj6-QF-qHr" firstAttribute="top" secondItem="3" secondAttribute="top" constant="217" id="iNm-u1-GPv"/>
                             <constraint firstItem="cEq-DC-BSp" firstAttribute="baseline" secondItem="ZPv-dR-NbL" secondAttribute="baseline" type="default" id="kYp-3K-YKm"/>
+                            <constraint firstItem="QVX-AW-A0x" firstAttribute="top" secondItem="cHS-V0-QWs" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="pYa-fb-gMg"/>
+                            <constraint firstItem="QVX-AW-A0x" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="rfF-j6-gxL"/>
+                            <constraint firstItem="cHS-V0-QWs" firstAttribute="centerX" secondItem="dj6-QF-qHr" secondAttribute="centerX" type="default" id="t8Y-GJ-MWd"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="addPTS" destination="dj6-QF-qHr" id="wQ4-ge-PSV"/>
+                        <outlet property="password" destination="QVX-AW-A0x" id="nMe-xt-qb4"/>
                         <outlet property="pointsLabel" destination="cEq-DC-BSp" id="dPa-GA-qFK"/>
                         <outlet property="removePTS" destination="yaL-fX-pMm" id="N10-9e-5vN"/>
                         <outlet property="retrievePTS" destination="ZPv-dR-NbL" id="IY9-VH-FSf"/>
+                        <outlet property="username" destination="cHS-V0-QWs" id="jka-qd-qiF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
@@ -78,10 +111,15 @@
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
+                <relationship kind="action" name="addPoints:"/>
+                <relationship kind="action" name="removePoints:"/>
+                <relationship kind="action" name="retrievePoints:"/>
                 <relationship kind="outlet" name="addPTS" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="password" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="pointsLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="removePTS" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="retrievePTS" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="username" candidateClass="UITextField"/>
             </relationships>
         </class>
     </classes>

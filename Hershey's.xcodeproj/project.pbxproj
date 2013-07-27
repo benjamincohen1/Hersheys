@@ -23,19 +23,20 @@
 		FA08E7D417A437AB00EA989B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA08E7AC17A437AB00EA989B /* Foundation.framework */; };
 		FA08E7DC17A437AB00EA989B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA08E7DA17A437AB00EA989B /* InfoPlist.strings */; };
 		FA08E7DF17A437AB00EA989B /* Hershey_sTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA08E7DE17A437AB00EA989B /* Hershey_sTests.m */; };
-		FA08E80617A4528700EA989B /* CXMLDocument_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = FA08E7EB17A4528700EA989B /* CXMLDocument_CreationExtensions.m */; };
-		FA08E80717A4528700EA989B /* CXMLNode_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = FA08E7ED17A4528700EA989B /* CXMLNode_CreationExtensions.m */; };
-		FA08E80817A4528700EA989B /* CXHTMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = FA08E7EF17A4528700EA989B /* CXHTMLDocument.m */; };
-		FA08E80917A4528700EA989B /* CXMLDocument_PrivateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = FA08E7F117A4528700EA989B /* CXMLDocument_PrivateExtensions.m */; };
-		FA08E80A17A4528700EA989B /* CXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = FA08E7F317A4528700EA989B /* CXMLDocument.m */; };
-		FA08E80B17A4528700EA989B /* CXMLElement_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = FA08E7F517A4528700EA989B /* CXMLElement_CreationExtensions.m */; };
-		FA08E80C17A4528700EA989B /* CXMLElement_ElementTreeExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = FA08E7F717A4528700EA989B /* CXMLElement_ElementTreeExtensions.m */; };
-		FA08E80D17A4528700EA989B /* CXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = FA08E7F917A4528700EA989B /* CXMLElement.m */; };
-		FA08E80E17A4528700EA989B /* CXMLNamespaceNode.m in Sources */ = {isa = PBXBuildFile; fileRef = FA08E7FB17A4528700EA989B /* CXMLNamespaceNode.m */; };
-		FA08E80F17A4528700EA989B /* CXMLNode_PrivateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = FA08E7FD17A4528700EA989B /* CXMLNode_PrivateExtensions.m */; };
-		FA08E81017A4528700EA989B /* CXMLNode_XPathExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = FA08E7FF17A4528700EA989B /* CXMLNode_XPathExtensions.m */; };
-		FA08E81117A4528700EA989B /* CXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = FA08E80117A4528700EA989B /* CXMLNode.m */; };
-		FA08E81217A4528700EA989B /* CTidy.m in Sources */ = {isa = PBXBuildFile; fileRef = FA08E80417A4528700EA989B /* CTidy.m */; };
+		FA08E80617A4528700EA989B /* CXMLDocument_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = FA08E7EB17A4528700EA989B /* CXMLDocument_CreationExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FA08E80717A4528700EA989B /* CXMLNode_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = FA08E7ED17A4528700EA989B /* CXMLNode_CreationExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FA08E80817A4528700EA989B /* CXHTMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = FA08E7EF17A4528700EA989B /* CXHTMLDocument.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FA08E80917A4528700EA989B /* CXMLDocument_PrivateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = FA08E7F117A4528700EA989B /* CXMLDocument_PrivateExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FA08E80A17A4528700EA989B /* CXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = FA08E7F317A4528700EA989B /* CXMLDocument.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FA08E80B17A4528700EA989B /* CXMLElement_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = FA08E7F517A4528700EA989B /* CXMLElement_CreationExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FA08E80C17A4528700EA989B /* CXMLElement_ElementTreeExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = FA08E7F717A4528700EA989B /* CXMLElement_ElementTreeExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FA08E80D17A4528700EA989B /* CXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = FA08E7F917A4528700EA989B /* CXMLElement.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FA08E80E17A4528700EA989B /* CXMLNamespaceNode.m in Sources */ = {isa = PBXBuildFile; fileRef = FA08E7FB17A4528700EA989B /* CXMLNamespaceNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FA08E80F17A4528700EA989B /* CXMLNode_PrivateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = FA08E7FD17A4528700EA989B /* CXMLNode_PrivateExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FA08E81017A4528700EA989B /* CXMLNode_XPathExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = FA08E7FF17A4528700EA989B /* CXMLNode_XPathExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FA08E81117A4528700EA989B /* CXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = FA08E80117A4528700EA989B /* CXMLNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FA08E81217A4528700EA989B /* CTidy.m in Sources */ = {isa = PBXBuildFile; fileRef = FA08E80417A4528700EA989B /* CTidy.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FA08E81417A45A3B00EA989B /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FA08E81317A45A3B00EA989B /* libxml2.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,7 @@
 		FA08E80317A4528700EA989B /* CTidy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTidy.h; sourceTree = "<group>"; };
 		FA08E80417A4528700EA989B /* CTidy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTidy.m; sourceTree = "<group>"; };
 		FA08E80517A4528700EA989B /* TouchXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchXML.h; sourceTree = "<group>"; };
+		FA08E81317A45A3B00EA989B /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA08E81417A45A3B00EA989B /* libxml2.dylib in Frameworks */,
 				FA08E7AB17A437AB00EA989B /* UIKit.framework in Frameworks */,
 				FA08E7AD17A437AB00EA989B /* Foundation.framework in Frameworks */,
 				FA08E7AF17A437AB00EA989B /* CoreGraphics.framework in Frameworks */,
@@ -127,6 +130,7 @@
 		FA08E79E17A437AB00EA989B = {
 			isa = PBXGroup;
 			children = (
+				FA08E81317A45A3B00EA989B /* libxml2.dylib */,
 				FA08E7B017A437AB00EA989B /* Hershey's */,
 				FA08E7D717A437AB00EA989B /* Hershey'sTests */,
 				FA08E7A917A437AB00EA989B /* Frameworks */,
@@ -489,6 +493,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Hershey's/Hershey's-Prefix.pch";
+				HEADER_SEARCH_PATHS = "${SDKROOT}/usr/include/libxml2";
 				INFOPLIST_FILE = "Hershey's/Hershey's-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -501,6 +506,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Hershey's/Hershey's-Prefix.pch";
+				HEADER_SEARCH_PATHS = "${SDKROOT}/usr/include/libxml2";
 				INFOPLIST_FILE = "Hershey's/Hershey's-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
