@@ -20,6 +20,19 @@
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
+- (IBAction)addPoints:(id)sender {
+    
+}
+
+- (IBAction)removePoints:(id)sender {
+    
+}
+
+- (IBAction)retrievePoints:(id)sender {
+    
+}
+
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

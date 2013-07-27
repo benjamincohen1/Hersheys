@@ -10,4 +10,9 @@
 
 @interface ViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *pointsLabel;
+@property (weak, nonatomic) IBOutlet UIButton *retrievePTS;
+@property (weak, nonatomic) IBOutlet UIButton *removePTS;
+@property (weak, nonatomic) IBOutlet UIButton *addPTS;
+
 @end
