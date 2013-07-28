@@ -14,10 +14,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    acUsername = [[NSString alloc] init];
-    acPassword = [[NSString alloc] init];
-    totalPoints = [[NSString alloc] init];
-    account = [[NSString alloc] init];
     acUsername = [defaults objectForKey:@"username"];
     acPassword = [defaults objectForKey:@"password"];
     account = [defaults objectForKey:@"account"];

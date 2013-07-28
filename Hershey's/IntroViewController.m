@@ -14,7 +14,7 @@
 @end
 
 @implementation IntroViewController
-@synthesize username, password;
+@synthesize username, password, animatedImageView;
 
 - (void)viewDidLoad
 {
@@ -30,6 +30,8 @@
         theUsername = [defaults objectForKey:@"username"];
         thePassword = [defaults objectForKey:@"password"];
     }
+    animatedImageView.dataSource = self;
+    imageArray = [NSArray arrayWithObjects:@"BGImage1", @"BGImage2", @"BGImage3", nil];
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
@@ -81,7 +83,7 @@
     NSLog(@"heres data:%@", [NSString stringWithUTF8String:[data bytes]]);
     if ([[NSString stringWithUTF8String:[data bytes]] isEqualToString:@"ACCOUNT NOT CREATED"]) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Username Taken"
-                                                        message:@"The username has been taken. SUcks."
+                                                        message:@"The username has been taken. Please choose another one."
                                                        delegate:nil
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles: nil];
@@ -95,6 +97,17 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:@"Yes" forKey:@"account"];
     [self performSegueWithIdentifier:@"DoneAccount" sender:self];
+}
+
+- (NSUInteger)animatedImagesNumberOfImages:(JSAnimatedImagesView *)animatedImagesView
+{
+    return 3;
+}
+
+- (UIImage *)animatedImagesView:(JSAnimatedImagesView *)animatedImagesView imageAtIndex:(NSUInteger)index
+{
+    NSLog(@"%d", index);
+    return [UIImage imageNamed:[imageArray objectAtIndex:index]];
 }
 
 

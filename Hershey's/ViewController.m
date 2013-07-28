@@ -50,6 +50,9 @@
     //set request url to the NSURLConnection
     NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
     [theConnection start];
+    
+    [self refreshLabel];
+
 }
 
 - (IBAction)removePoints:(id)sender {
@@ -126,9 +129,10 @@
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
     NSLog(@"heres data:%@", [NSString stringWithUTF8String:[data bytes]]);
+    [pointsLabel setText:[NSString stringWithUTF8String:[data bytes]]];
     if ([[NSString stringWithUTF8String:[data bytes]] isEqualToString:@"ACCOUNT NOT CREATED"]) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Username Taken"
-                                                        message:@"The username has been taken. SUcks."
+                                                        message:@"The username has been taken. Please choose another one."
                                                        delegate:nil
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles: nil];
@@ -136,6 +140,8 @@
         account = @"No";
         [username becomeFirstResponder];
     }
+
+    [self refreshLabel];
 }
 
 - (void)didReceiveMemoryWarning

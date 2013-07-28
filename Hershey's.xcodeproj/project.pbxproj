@@ -47,6 +47,28 @@
 		FAD566E117A4A97A004BE69C /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD566E017A4A97A004BE69C /* ShareViewController.m */; };
 		FAD566E317A4A9BA004BE69C /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD566E217A4A9BA004BE69C /* Social.framework */; };
 		FAD566EE17A4C3A8004BE69C /* MGInstagram.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD566ED17A4C3A8004BE69C /* MGInstagram.m */; };
+		FADAA89217A50A5300775364 /* IntroUI_0007_Rectangle-1-copy.png in Resources */ = {isa = PBXBuildFile; fileRef = FADAA89117A50A5300775364 /* IntroUI_0007_Rectangle-1-copy.png */; };
+		FADAA89417A50A6300775364 /* IntroUI_0006_Hershey's76.png in Resources */ = {isa = PBXBuildFile; fileRef = FADAA89317A50A6300775364 /* IntroUI_0006_Hershey's76.png */; };
+		FADAA89617A50B3A00775364 /* usrpass.png in Resources */ = {isa = PBXBuildFile; fileRef = FADAA89517A50B3A00775364 /* usrpass.png */; };
+		FADAA89817A50B9C00775364 /* createAccount.png in Resources */ = {isa = PBXBuildFile; fileRef = FADAA89717A50B9C00775364 /* createAccount.png */; };
+		FADAA89A17A50CA100775364 /* twitterBG.png in Resources */ = {isa = PBXBuildFile; fileRef = FADAA89917A50CA100775364 /* twitterBG.png */; };
+		FADAA89C17A50CAB00775364 /* twitterIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = FADAA89B17A50CAB00775364 /* twitterIcon.png */; };
+		FADAA89E17A50E1C00775364 /* BGImage1.png in Resources */ = {isa = PBXBuildFile; fileRef = FADAA89D17A50E1C00775364 /* BGImage1.png */; };
+		FADAA8A117A5100400775364 /* FBBG.png in Resources */ = {isa = PBXBuildFile; fileRef = FADAA89F17A5100400775364 /* FBBG.png */; };
+		FADAA8A217A5100400775364 /* FBIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = FADAA8A017A5100400775364 /* FBIcon.png */; };
+		FADAA8A517A518F800775364 /* RedeemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FADAA8A417A518F800775364 /* RedeemViewController.m */; };
+		FADAA8A817A51F7700775364 /* ScavengerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FADAA8A717A51F7600775364 /* ScavengerViewController.m */; };
+		FADAA8AA17A5202100775364 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FADAA8A917A5202000775364 /* CoreLocation.framework */; };
+		FADAA8AC17A5227200775364 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FADAA8AB17A5227200775364 /* MapKit.framework */; };
+		FADAA8AE17A52B1900775364 /* redBox.png in Resources */ = {isa = PBXBuildFile; fileRef = FADAA8AD17A52B1900775364 /* redBox.png */; };
+		FADAA8B517A52EC300775364 /* MSWeakTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = FADAA8B217A52EC300775364 /* MSWeakTimer.m */; };
+		FADAA8B617A52EC300775364 /* JSAnimatedImagesView.m in Sources */ = {isa = PBXBuildFile; fileRef = FADAA8B417A52EC300775364 /* JSAnimatedImagesView.m */; };
+		FADAA8B917A530FC00775364 /* BGImage2.png in Resources */ = {isa = PBXBuildFile; fileRef = FADAA8B717A530FC00775364 /* BGImage2.png */; };
+		FADAA8BA17A530FC00775364 /* BGImage3.png in Resources */ = {isa = PBXBuildFile; fileRef = FADAA8B817A530FC00775364 /* BGImage3.png */; };
+		FADAA8C217A53E4900775364 /* Back-Arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = FADAA8C117A53E4900775364 /* Back-Arrow.png */; };
+		FADAA8C617A53FCA00775364 /* Redeem.png in Resources */ = {isa = PBXBuildFile; fileRef = FADAA8C317A53FC900775364 /* Redeem.png */; };
+		FADAA8C717A53FCA00775364 /* Scavenger.png in Resources */ = {isa = PBXBuildFile; fileRef = FADAA8C417A53FC900775364 /* Scavenger.png */; };
+		FADAA8C817A53FCA00775364 /* Share.png in Resources */ = {isa = PBXBuildFile; fileRef = FADAA8C517A53FCA00775364 /* Share.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +145,32 @@
 		FAD566E217A4A9BA004BE69C /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		FAD566EC17A4C3A8004BE69C /* MGInstagram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGInstagram.h; sourceTree = "<group>"; };
 		FAD566ED17A4C3A8004BE69C /* MGInstagram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGInstagram.m; sourceTree = "<group>"; };
+		FADAA89117A50A5300775364 /* IntroUI_0007_Rectangle-1-copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IntroUI_0007_Rectangle-1-copy.png"; sourceTree = "<group>"; };
+		FADAA89317A50A6300775364 /* IntroUI_0006_Hershey's76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IntroUI_0006_Hershey's76.png"; sourceTree = "<group>"; };
+		FADAA89517A50B3A00775364 /* usrpass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = usrpass.png; sourceTree = "<group>"; };
+		FADAA89717A50B9C00775364 /* createAccount.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = createAccount.png; sourceTree = "<group>"; };
+		FADAA89917A50CA100775364 /* twitterBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitterBG.png; sourceTree = "<group>"; };
+		FADAA89B17A50CAB00775364 /* twitterIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitterIcon.png; sourceTree = "<group>"; };
+		FADAA89D17A50E1C00775364 /* BGImage1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BGImage1.png; sourceTree = "<group>"; };
+		FADAA89F17A5100400775364 /* FBBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FBBG.png; sourceTree = "<group>"; };
+		FADAA8A017A5100400775364 /* FBIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FBIcon.png; sourceTree = "<group>"; };
+		FADAA8A317A518F800775364 /* RedeemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedeemViewController.h; sourceTree = "<group>"; };
+		FADAA8A417A518F800775364 /* RedeemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedeemViewController.m; sourceTree = "<group>"; };
+		FADAA8A617A51F7600775364 /* ScavengerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScavengerViewController.h; sourceTree = "<group>"; };
+		FADAA8A717A51F7600775364 /* ScavengerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScavengerViewController.m; sourceTree = "<group>"; };
+		FADAA8A917A5202000775364 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		FADAA8AB17A5227200775364 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		FADAA8AD17A52B1900775364 /* redBox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = redBox.png; path = ../../Artwork/redBox.png; sourceTree = "<group>"; };
+		FADAA8B117A52EC300775364 /* MSWeakTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSWeakTimer.h; sourceTree = "<group>"; };
+		FADAA8B217A52EC300775364 /* MSWeakTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSWeakTimer.m; sourceTree = "<group>"; };
+		FADAA8B317A52EC300775364 /* JSAnimatedImagesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSAnimatedImagesView.h; sourceTree = "<group>"; };
+		FADAA8B417A52EC300775364 /* JSAnimatedImagesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSAnimatedImagesView.m; sourceTree = "<group>"; };
+		FADAA8B717A530FC00775364 /* BGImage2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BGImage2.png; sourceTree = "<group>"; };
+		FADAA8B817A530FC00775364 /* BGImage3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BGImage3.png; sourceTree = "<group>"; };
+		FADAA8C117A53E4900775364 /* Back-Arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Back-Arrow.png"; sourceTree = "<group>"; };
+		FADAA8C317A53FC900775364 /* Redeem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Redeem.png; sourceTree = "<group>"; };
+		FADAA8C417A53FC900775364 /* Scavenger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Scavenger.png; sourceTree = "<group>"; };
+		FADAA8C517A53FCA00775364 /* Share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Share.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +178,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FADAA8AC17A5227200775364 /* MapKit.framework in Frameworks */,
+				FADAA8AA17A5202100775364 /* CoreLocation.framework in Frameworks */,
 				FA08E81417A45A3B00EA989B /* libxml2.dylib in Frameworks */,
 				FAD566E317A4A9BA004BE69C /* Social.framework in Frameworks */,
 				FA08E7AB17A437AB00EA989B /* UIKit.framework in Frameworks */,
@@ -154,6 +204,8 @@
 		FA08E79E17A437AB00EA989B = {
 			isa = PBXGroup;
 			children = (
+				FADAA8AB17A5227200775364 /* MapKit.framework */,
+				FADAA8A917A5202000775364 /* CoreLocation.framework */,
 				FA08E7B017A437AB00EA989B /* Hershey's */,
 				FA08E7D717A437AB00EA989B /* Hershey'sTests */,
 				FA08E7A917A437AB00EA989B /* Frameworks */,
@@ -189,6 +241,10 @@
 				FA08E7B917A437AB00EA989B /* AppDelegate.h */,
 				FA08E7BA17A437AB00EA989B /* AppDelegate.m */,
 				FA08E7C217A437AB00EA989B /* MainStoryboard_iPhone.storyboard */,
+				FADAA8A617A51F7600775364 /* ScavengerViewController.h */,
+				FADAA8A717A51F7600775364 /* ScavengerViewController.m */,
+				FADAA8A317A518F800775364 /* RedeemViewController.h */,
+				FADAA8A417A518F800775364 /* RedeemViewController.m */,
 				FA08E81F17A48DCA00EA989B /* IntroViewController.h */,
 				FA08E82017A48DCA00EA989B /* IntroViewController.m */,
 				FA08E7C817A437AB00EA989B /* ViewController.h */,
@@ -203,6 +259,9 @@
 		FA08E7B117A437AB00EA989B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FADAA8AF17A52EC300775364 /* Dependencies */,
+				FADAA8B317A52EC300775364 /* JSAnimatedImagesView.h */,
+				FADAA8B417A52EC300775364 /* JSAnimatedImagesView.m */,
 				FAD566E417A4B4DB004BE69C /* Instagram */,
 				FAD566D217A4A792004BE69C /* Images */,
 				FA08E7E817A4526500EA989B /* TouchXML */,
@@ -289,6 +348,7 @@
 		FAD566D217A4A792004BE69C /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				FADAA89017A50A2C00775364 /* UI */,
 				FAD566D317A4A7A3004BE69C /* facebook.png */,
 				FAD566D417A4A7A3004BE69C /* facebookHighlight.png */,
 				FAD566D517A4A7A3004BE69C /* Instagram.png */,
@@ -306,6 +366,46 @@
 				FAD566ED17A4C3A8004BE69C /* MGInstagram.m */,
 			);
 			name = Instagram;
+			sourceTree = "<group>";
+		};
+		FADAA89017A50A2C00775364 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				FADAA8C317A53FC900775364 /* Redeem.png */,
+				FADAA8C417A53FC900775364 /* Scavenger.png */,
+				FADAA8C517A53FCA00775364 /* Share.png */,
+				FADAA8C117A53E4900775364 /* Back-Arrow.png */,
+				FADAA8B717A530FC00775364 /* BGImage2.png */,
+				FADAA8B817A530FC00775364 /* BGImage3.png */,
+				FADAA8AD17A52B1900775364 /* redBox.png */,
+				FADAA89F17A5100400775364 /* FBBG.png */,
+				FADAA8A017A5100400775364 /* FBIcon.png */,
+				FADAA89D17A50E1C00775364 /* BGImage1.png */,
+				FADAA89B17A50CAB00775364 /* twitterIcon.png */,
+				FADAA89917A50CA100775364 /* twitterBG.png */,
+				FADAA89717A50B9C00775364 /* createAccount.png */,
+				FADAA89517A50B3A00775364 /* usrpass.png */,
+				FADAA89317A50A6300775364 /* IntroUI_0006_Hershey's76.png */,
+				FADAA89117A50A5300775364 /* IntroUI_0007_Rectangle-1-copy.png */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		FADAA8AF17A52EC300775364 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				FADAA8B017A52EC300775364 /* MSWeakTimer */,
+			);
+			path = Dependencies;
+			sourceTree = "<group>";
+		};
+		FADAA8B017A52EC300775364 /* MSWeakTimer */ = {
+			isa = PBXGroup;
+			children = (
+				FADAA8B117A52EC300775364 /* MSWeakTimer.h */,
+				FADAA8B217A52EC300775364 /* MSWeakTimer.m */,
+			);
+			path = MSWeakTimer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -390,6 +490,22 @@
 				FAD566DC17A4A7A3004BE69C /* InstagramHighlight.png in Resources */,
 				FAD566DD17A4A7A3004BE69C /* twitter.png in Resources */,
 				FAD566DE17A4A7A3004BE69C /* twitterHighlight.png in Resources */,
+				FADAA89217A50A5300775364 /* IntroUI_0007_Rectangle-1-copy.png in Resources */,
+				FADAA89417A50A6300775364 /* IntroUI_0006_Hershey's76.png in Resources */,
+				FADAA89617A50B3A00775364 /* usrpass.png in Resources */,
+				FADAA89817A50B9C00775364 /* createAccount.png in Resources */,
+				FADAA89A17A50CA100775364 /* twitterBG.png in Resources */,
+				FADAA89C17A50CAB00775364 /* twitterIcon.png in Resources */,
+				FADAA89E17A50E1C00775364 /* BGImage1.png in Resources */,
+				FADAA8A117A5100400775364 /* FBBG.png in Resources */,
+				FADAA8A217A5100400775364 /* FBIcon.png in Resources */,
+				FADAA8AE17A52B1900775364 /* redBox.png in Resources */,
+				FADAA8B917A530FC00775364 /* BGImage2.png in Resources */,
+				FADAA8BA17A530FC00775364 /* BGImage3.png in Resources */,
+				FADAA8C217A53E4900775364 /* Back-Arrow.png in Resources */,
+				FADAA8C617A53FCA00775364 /* Redeem.png in Resources */,
+				FADAA8C717A53FCA00775364 /* Scavenger.png in Resources */,
+				FADAA8C817A53FCA00775364 /* Share.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,6 +559,10 @@
 				FA08E82117A48DCA00EA989B /* IntroViewController.m in Sources */,
 				FAD566E117A4A97A004BE69C /* ShareViewController.m in Sources */,
 				FAD566EE17A4C3A8004BE69C /* MGInstagram.m in Sources */,
+				FADAA8A517A518F800775364 /* RedeemViewController.m in Sources */,
+				FADAA8A817A51F7700775364 /* ScavengerViewController.m in Sources */,
+				FADAA8B517A52EC300775364 /* MSWeakTimer.m in Sources */,
+				FADAA8B617A52EC300775364 /* JSAnimatedImagesView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
