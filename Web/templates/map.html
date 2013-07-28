@@ -1,0 +1,39 @@
+
+
+ <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5/leaflet.css" />
+ <!--[if lte IE 8]>
+     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5/leaflet.ie.css" />
+ <![endif]-->
+
+
+ <!--[if lte IE 8]>
+     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5/leaflet.ie.css" />
+ <![endif]-->
+
+  <script src="http://cdn.leafletjs.com/leaflet-0.5/leaflet.js"></script>
+
+
+
+ <div id="map" style = "height : 500px; width: 500px">
+
+ </div>
+    <div id="chart_div" style = "height: 500px"></div>
+
+  {% for code in codes%}
+       <p> {{code}}  </p>  
+
+  {% endfor %}
+   <script>
+      var map = L.map('map').setView(["40.753641", "-73.986652"], 16);  
+        L.tileLayer('http://{s}.tile.cloudmade.com/e7b61e61295a44a5b319ca0bd3150890/997/256/{z}/{x}/{y}.png', {
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
+      // minZoom: 13 // 13
+      }).addTo(map);
+
+        {%for rew in codes%}
+           var marker = L.marker([{{rew[0]}}, {{rew[1]}}], {color: "red"}).addTo(map);
+       {%endfor%}
+
+
+
+   </script>

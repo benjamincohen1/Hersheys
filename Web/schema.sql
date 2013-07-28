@@ -14,3 +14,22 @@ create table currency(
 	user_id integer not null,
 	money integer not null
 );
+INSERT INTO currency( user_id, money ) VALUES
+   ("1", "50" );
+
+drop table if exists mapped_rewards;
+create table mapped_rewards(
+	id integer primary key autoincrement,
+	lat REAL not null,
+	long REAL not null,
+	code VARCHAR not null
+);
+
+INSERT INTO mapped_rewards(lat, long, code) VALUES
+	("40.753641", "-73.986652", "55TfiT\");
+
+INSERT INTO mapped_rewards(lat, long, code) VALUES
+	("40.753531", "-73.987652", "mko-wT@");
+
+INSERT INTO mapped_rewards(lat, long, code) VALUES
+	("42.753641", "-79.986652", "qC9]<p<");

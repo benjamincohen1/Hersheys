@@ -41,9 +41,15 @@ def teardown_request(exception):
 
 """REAL CODE STARTS BELOW THIS"""
 
-@app.route('/')
-def show_entries():
-   return "TEST"
+
+@app.route('/users/authenticate', methods = ['POST', 'GET'])
+def authenticate():
+	from user_utils import authenticate
+
+	username = request.form['Username']
+	password = hashlib.md5(request.form['Password']).hexdigest()
+	return authenticate(username, password)
+
 
 @app.route('/users/new', methods = ['POST', 'GET'])
 def add_user():
@@ -58,10 +64,11 @@ def add_user():
 	success = new_account(username, password)
 	if success:
 		print "SUCCESS"
-		return "SUCCESS"
+		return "ACCOUNT CREATED"
 	else:
 		print "FAILURE"
-		return "FAILURE"
+		return "ACCOUNT NOT CREATED"
+
 
 @app.route('/users/money', methods = ['POST', 'GET'])
 def get_money():
@@ -69,9 +76,37 @@ def get_money():
 	print "GETTING USER'S MONEY"
 	from money_utils import get_cur_money
 	username = request.form['Username']
-	print username
 	cur_money = get_cur_money(username)
 	return cur_money
+
+
+@app.route('/codes/redeem', methods = ['POST', 'GET'])
+def redeem_code():
+	from rewards_util import redeem_reward_code
+	username = request.form['Username']
+	code = request.form['Code']
+
+	status = redeem_reward_code(username, code)
+
+	return str(status)
+
+@app.route('/map')
+def map():
+	from rewards_util import get_all_rewards
+
+	rewards = get_all_rewards()
+
+	codes = [str(x[2]) for x in rewards]
+
+	return render_template("map.html", **{'codes': rewards})
+
+@app.route('/rewards/add_point', methods = ['POST', 'GET'])
+def add_point():
+	from rewards_util import drop_code_at_point
+	lat = request.form['lat']
+	lon = request.form['lon']
+	points = request.form['points']
+	return str(drop_code_at_point(lat, lon, points))
 
 
 @app.route('/money/remove', methods = ['POST', 'GET'])
