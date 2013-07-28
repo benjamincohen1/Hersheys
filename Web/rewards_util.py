@@ -4,7 +4,7 @@ import re
 import qrcode
 import random
 import math
-
+import time
 g = server.g
 
 def redeem_reward_code(username, code):
@@ -62,10 +62,132 @@ def generate_code(value):
 		codeStr += chr(x)
 	return codeStr
 
+def tweet_sent(username):
+	from money_utils import add_money, get_user_id
+	import datetime, re
+	global g
+	from dateutil import parser
+	u_id = get_user_id(str(username))
+
+	print u_id
+	if u_id == "FAILURE":
+		return "FAILURE"
+	query = "SELECT * FROM tweets WHERE user_id = '"+str(u_id)+"'"
+	print query
+
+	cur = g.db.execute(query)
+	row = cur.fetchone()
+	if row == None:
+		add_money(username, 25)
+		t = datetime.datetime.now()
+		values = (u_id, str(t), 1)
+
+		print values
+		query = "INSERT INTO tweets(user_id, tweet_date, tweets) VALUES"\
+		 + str(values)
+
+		g.db.execute(query)
+		g.db.commit()
+
+		return "25"
+	else:
+		tweets = row[3]
+		t = datetime.datetime.now()
+
+		d = row[2]
+		d = parser.parse(d)
+		cur_time = datetime.datetime.now()
+
+		delta = cur_time - d
+
+		if delta < datetime.timedelta(hours=1):
+			points_added = 0
+		elif delta < datetime.timedelta(hours=6):
+			points_added = 5
+		elif delta < datetime.timedelta(hours=24):
+			points_added = 10
+		elif delta < datetime.timedelta(hours=72):
+			points_added = 15
+		else:
+			points_added = 25
+
+
+		print points_added
+
+		add_money(username, points_added)
+		tweets += 1
+		query = "UPDATE tweets SET tweet_date = '"+str(cur_time)+"', tweets = '"+str(tweets)+"'\
+				 WHERE user_id = '"+str(u_id)+"'"
+		print query
+		g.db.execute(query)
+		g.db.commit()
+		return str(tweets)
+
+def facebook_sent(username):
+	from money_utils import add_money, get_user_id
+	import datetime, re
+	global g
+	from dateutil import parser
+	u_id = get_user_id(str(username))
+
+	print u_id
+	if u_id == "FAILURE":
+		return "FAILURE"
+	query = "SELECT * FROM facebook WHERE user_id = '"+str(u_id)+"'"
+	print query
+
+	cur = g.db.execute(query)
+	row = cur.fetchone()
+	if row == None:
+		add_money(username, 25)
+		t = datetime.datetime.now()
+		values = (u_id, str(t), 1)
+
+		print values
+		query = "INSERT INTO facebook(user_id, tweet_date, facebook) VALUES"\
+		 + str(values)
+
+		g.db.execute(query)
+		g.db.commit()
+
+		return "25"
+	else:
+		facebook = row[3]
+		t = datetime.datetime.now()
+
+		d = row[2]
+		d = parser.parse(d)
+		cur_time = datetime.datetime.now()
+
+		delta = cur_time - d
+
+		if delta < datetime.timedelta(hours=1):
+			points_added = 0
+		elif delta < datetime.timedelta(hours=6):
+			points_added = 5
+		elif delta < datetime.timedelta(hours=24):
+			points_added = 10
+		elif delta < datetime.timedelta(hours=72):
+			points_added = 15
+		else:
+			points_added = 25
+
+
+		print points_added
+
+		add_money(username, points_added)
+		facebook += 1
+		query = "UPDATE facebook SET tweet_date = '"+str(cur_time)+"', facebook = '"+str(facebook)+"'\
+				 WHERE user_id = '"+str(u_id)+"'"
+		print query
+		g.db.execute(query)
+		g.db.commit()
+		return str(points_added)
+
 
 def is_valid_code(code):
 	"49 - 57, 65 - 90, 97 - 122"
-	if len(code) != 10:
+	if len(code) != 7:
 		return False
 	codeArray = [ord(x) for x in code]
 	primes = codeArray[:2]

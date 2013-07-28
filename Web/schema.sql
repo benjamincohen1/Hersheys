@@ -7,7 +7,8 @@ create table users (
 
 INSERT INTO users( username, password ) VALUES
    ("admin", "5f4dcc3b5aa765d61d8327deb882cf99" );
-
+INSERT INTO users( username, password ) VALUES
+   ("ben", "5f4dcc3b5aa765d61d8327deb882cf99" );
 drop table if exists currency;
 create table currency(
 	id integer primary key autoincrement,
@@ -33,3 +34,19 @@ INSERT INTO mapped_rewards(lat, long, code) VALUES
 
 INSERT INTO mapped_rewards(lat, long, code) VALUES
 	("42.753641", "-79.986652", "qC9]<p<");
+
+drop table if exists tweets;
+create table tweets(
+	id integer primary key autoincrement,
+	user_id integer not null,
+	tweet_date VARCHAR not null,
+	tweets integer not null default 0
+);
+
+drop table if exists facebook;
+create table facebook(
+	id integer primary key autoincrement,
+	user_id integer not null,
+	tweet_date VARCHAR not null,
+	facebook integer not null default 0
+);

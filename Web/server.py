@@ -1,7 +1,7 @@
 # all the imports
 import sqlite3, hashlib, os
 from flask import Flask, request, session, g, redirect, url_for, \
-     abort, render_template, flash
+	 abort, render_template, flash
 
 
 from contextlib import closing
@@ -20,24 +20,24 @@ app.config.from_envvar('FLASKR_SETTINGS', silent=True)
 
 
 def connect_db():
-    return sqlite3.connect(app.config['DATABASE'])
+	return sqlite3.connect(app.config['DATABASE'])
 
 
 def init_db():
-    with closing(connect_db()) as db:
-        with app.open_resource('schema.sql', mode='r') as f:
-            db.cursor().executescript(f.read())
-        db.commit()
+	with closing(connect_db()) as db:
+		with app.open_resource('schema.sql', mode='r') as f:
+			db.cursor().executescript(f.read())
+		db.commit()
 
 @app.before_request
 def before_request():
-    g.db = connect_db()
+	g.db = connect_db()
 
 @app.teardown_request
 def teardown_request(exception):
-    db = getattr(g, 'db', None)
-    if db is not None:
-        db.close()
+	db = getattr(g, 'db', None)
+	if db is not None:
+		db.close()
 
 """REAL CODE STARTS BELOW THIS"""
 
@@ -120,6 +120,28 @@ def remove_money():
 
 	return cur_money
 
+
+@app.route('/tweets/sent', methods = ['POST', 'GET'])
+def tweet_sent():
+	from rewards_util import tweet_sent
+	username = request.form['Username']
+
+	points = tweet_sent(username)
+	print points
+	return points
+
+
+@app.route('/facebook/sent', methods = ['POST', 'GET'])
+def tweet_sent():
+	from rewards_util import facebook_sent
+	username = request.form['Username']
+
+	points = facebook_sent(username)
+	print points
+	return points
+
+
+
 @app.route('/money/add', methods = ['POST', 'GET'])
 def add_money():
 	# get paid
@@ -132,6 +154,12 @@ def add_money():
 
 	return cur_money
 
+@app.route('/make_points')
+def make_points():
+	from generate_points import make
 
+	make()
+
+	return "DONE"
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+	app.run(host='0.0.0.0')
