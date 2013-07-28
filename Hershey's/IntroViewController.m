@@ -87,7 +87,7 @@
                                                        delegate:nil
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles: nil];
-        [alert show];
+        //[alert show];
         account = @"No";
         [username becomeFirstResponder];
     }

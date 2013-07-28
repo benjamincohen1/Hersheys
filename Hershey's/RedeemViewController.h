@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface RedeemViewController : UIViewController <UITextFieldDelegate> {
-    
+    BOOL redeemCode;
 }
 @property (weak, nonatomic) IBOutlet UITextField *codeTextfield;
 @property (weak, nonatomic) IBOutlet UIButton *redeemButton;

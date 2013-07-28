@@ -25,6 +25,7 @@
 
 - (IBAction)dropPoint:(id)sender {
     DorC = @"Drop";
+    NSLog(@"Drop");
     locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
     locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
@@ -82,18 +83,30 @@
         //set request url to the NSURLConnection
         NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
         [theConnection start];
+        
     }
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
+    if ([DorC isEqualToString:@"Drop"]) {
     NSLog(@"heres data:%@", [NSString stringWithUTF8String:[data bytes]]);
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Drop Posted!"
                                                         message:@"Your gift has been sent!"
                                                        delegate:nil
                                               cancelButtonTitle:@"Yay!"
                                               otherButtonTitles: nil];
-        //[alert show];
+        [alert show];
+    } else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Woohoo!"
+                                                        message:@"Thank Ben For Dropping This Gift!"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Thanks Ben!"
+                                              otherButtonTitles: nil];
+        [alert show];
+    }
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshTP" object:nil];
+    
 }
 
 - (void)didReceiveMemoryWarning

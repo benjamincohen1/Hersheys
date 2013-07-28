@@ -38,6 +38,7 @@
 		FA08E81217A4528700EA989B /* CTidy.m in Sources */ = {isa = PBXBuildFile; fileRef = FA08E80417A4528700EA989B /* CTidy.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FA08E81417A45A3B00EA989B /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FA08E81317A45A3B00EA989B /* libxml2.dylib */; };
 		FA08E82117A48DCA00EA989B /* IntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA08E82017A48DCA00EA989B /* IntroViewController.m */; };
+		FAC7C9E017A573DB0098D196 /* kiipConnect.png in Resources */ = {isa = PBXBuildFile; fileRef = FAC7C9DF17A573DB0098D196 /* kiipConnect.png */; };
 		FAD566D917A4A7A3004BE69C /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = FAD566D317A4A7A3004BE69C /* facebook.png */; };
 		FAD566DA17A4A7A3004BE69C /* facebookHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = FAD566D417A4A7A3004BE69C /* facebookHighlight.png */; };
 		FAD566DB17A4A7A3004BE69C /* Instagram.png in Resources */ = {isa = PBXBuildFile; fileRef = FAD566D517A4A7A3004BE69C /* Instagram.png */; };
@@ -69,6 +70,10 @@
 		FADAA8C617A53FCA00775364 /* Redeem.png in Resources */ = {isa = PBXBuildFile; fileRef = FADAA8C317A53FC900775364 /* Redeem.png */; };
 		FADAA8C717A53FCA00775364 /* Scavenger.png in Resources */ = {isa = PBXBuildFile; fileRef = FADAA8C417A53FC900775364 /* Scavenger.png */; };
 		FADAA8C817A53FCA00775364 /* Share.png in Resources */ = {isa = PBXBuildFile; fileRef = FADAA8C517A53FCA00775364 /* Share.png */; };
+		FADAA8CD17A551E000775364 /* image4.png in Resources */ = {isa = PBXBuildFile; fileRef = FADAA8C917A551E000775364 /* image4.png */; };
+		FADAA8CE17A551E000775364 /* image1.png in Resources */ = {isa = PBXBuildFile; fileRef = FADAA8CA17A551E000775364 /* image1.png */; };
+		FADAA8CF17A551E000775364 /* image3.png in Resources */ = {isa = PBXBuildFile; fileRef = FADAA8CB17A551E000775364 /* image3.png */; };
+		FADAA8D017A551E000775364 /* image2.png in Resources */ = {isa = PBXBuildFile; fileRef = FADAA8CC17A551E000775364 /* image2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +139,7 @@
 		FA08E81317A45A3B00EA989B /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		FA08E81F17A48DCA00EA989B /* IntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroViewController.h; sourceTree = "<group>"; };
 		FA08E82017A48DCA00EA989B /* IntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroViewController.m; sourceTree = "<group>"; };
+		FAC7C9DF17A573DB0098D196 /* kiipConnect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kiipConnect.png; sourceTree = "<group>"; };
 		FAD566D317A4A7A3004BE69C /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
 		FAD566D417A4A7A3004BE69C /* facebookHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebookHighlight.png; sourceTree = "<group>"; };
 		FAD566D517A4A7A3004BE69C /* Instagram.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Instagram.png; sourceTree = "<group>"; };
@@ -171,6 +177,10 @@
 		FADAA8C317A53FC900775364 /* Redeem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Redeem.png; sourceTree = "<group>"; };
 		FADAA8C417A53FC900775364 /* Scavenger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Scavenger.png; sourceTree = "<group>"; };
 		FADAA8C517A53FCA00775364 /* Share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Share.png; sourceTree = "<group>"; };
+		FADAA8C917A551E000775364 /* image4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image4.png; sourceTree = "<group>"; };
+		FADAA8CA17A551E000775364 /* image1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image1.png; sourceTree = "<group>"; };
+		FADAA8CB17A551E000775364 /* image3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image3.png; sourceTree = "<group>"; };
+		FADAA8CC17A551E000775364 /* image2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image2.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -371,6 +381,11 @@
 		FADAA89017A50A2C00775364 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				FAC7C9DF17A573DB0098D196 /* kiipConnect.png */,
+				FADAA8C917A551E000775364 /* image4.png */,
+				FADAA8CA17A551E000775364 /* image1.png */,
+				FADAA8CB17A551E000775364 /* image3.png */,
+				FADAA8CC17A551E000775364 /* image2.png */,
 				FADAA8C317A53FC900775364 /* Redeem.png */,
 				FADAA8C417A53FC900775364 /* Scavenger.png */,
 				FADAA8C517A53FCA00775364 /* Share.png */,
@@ -506,6 +521,11 @@
 				FADAA8C617A53FCA00775364 /* Redeem.png in Resources */,
 				FADAA8C717A53FCA00775364 /* Scavenger.png in Resources */,
 				FADAA8C817A53FCA00775364 /* Share.png in Resources */,
+				FADAA8CD17A551E000775364 /* image4.png in Resources */,
+				FADAA8CE17A551E000775364 /* image1.png in Resources */,
+				FADAA8CF17A551E000775364 /* image3.png in Resources */,
+				FADAA8D017A551E000775364 /* image2.png in Resources */,
+				FAC7C9E017A573DB0098D196 /* kiipConnect.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

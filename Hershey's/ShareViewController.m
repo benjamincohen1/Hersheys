@@ -144,7 +144,6 @@
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [picker dismissViewControllerAnimated:YES completion:^{
         if ([MGInstagram isAppInstalled] == YES) {
-            [MGInstagram postImage:self.instagramImage withCaption:@"Share the love #hersheys" inView:self.view];
             NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://10.224.41.14:5000/facebook/sent"]];
             NSLog(@"GFFFF Delegate %@", appDelegate.acUsername);
             //set HTTP Method
@@ -159,6 +158,7 @@
             NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
             
             [theConnection start];
+            [MGInstagram postImage:self.instagramImage withCaption:@"Share the love #hersheys" inView:self.view];
         }
     }];
 }

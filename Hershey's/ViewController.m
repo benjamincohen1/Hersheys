@@ -25,15 +25,55 @@
         theUsername = [defaults objectForKey:@"username"];
         thePassword = [defaults objectForKey:@"password"];
     }
+    
     [super viewDidLoad];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshLabel) name:@"pointsRefreshed" object:nil];
+    // add the last image (image4) into the first position
+	[self addImageWithName:@"image4.jpg" atPosition:0];
+	
+	// add all of the images to the scroll view
+	for (int i = 1; i < 5; i++) {
+		[self addImageWithName:[NSString stringWithFormat:@"image%i.jpg",i] atPosition:i];
+	}
+	
+	// add the first image (image1) into the last position
+	[self addImageWithName:@"image1.jpg" atPosition:5];
+	
+	scrollView.contentSize = CGSizeMake(1920, 197);
+	[scrollView scrollRectToVisible:CGRectMake(320,0,320,197) animated:NO];
+
+    [self retrievePoints:self];
 	// Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void)addImageWithName:(NSString*)imageString atPosition:(int)position {
+	// add image to scroll view
+	UIImage *image = [UIImage imageNamed:imageString];
+	UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+	imageView.frame = CGRectMake(position*320, 0, 320, 197);
+	[scrollView addSubview:imageView];
 }
 
 - (void)refreshLabel {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     pointsLabel.text = [defaults objectForKey:@"points"];
 }
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)sender {
+	NSLog(@"%f",scrollView.contentOffset.x);
+	// The key is repositioning without animation
+	if (scrollView.contentOffset.x == 0) {
+		// user is scrolling to the left from image 1 to image 4
+		// reposition offset to show image 4 that is on the right in the scroll view
+		[scrollView scrollRectToVisible:CGRectMake(1280,0,320,197) animated:NO];
+	}
+	else if (scrollView.contentOffset.x == 1600) {
+		// user is scrolling to the right from image 4 to image 1
+		// reposition offset to show image 1 that is on the left in the scroll view
+		[scrollView scrollRectToVisible:CGRectMake(320,0,320,197) animated:NO];
+	}
+}
+
 
 - (IBAction)addPoints:(id)sender {
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -43,7 +83,7 @@
     [request setHTTPMethod:@"POST"];
     
     //Implement request_body for send request here username and password set into the body.
-    NSString *request_body = [NSString stringWithFormat:@"Username=%@&Ammount=10", appDelegate.acUsername];
+    NSString *request_body = [NSString stringWithFormat:@"Username=%@&Ammount=0", appDelegate.acUsername];
     //set request body into HTTPBody.
     [request setHTTPBody:[request_body dataUsingEncoding:NSUTF8StringEncoding]];
     
@@ -73,33 +113,7 @@
 }
 
 - (IBAction)retrievePoints:(id)sender {
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-
-    if (appDelegate.acUsername.length < 4) {
-        NSLog(@"%d", appDelegate.acUsername.length);
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Type in your username!"
-                                                        message:@"Press OK to submit your data!"
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles: nil];
-        [alert show];
-    } else {
-        NSLog(@"Hey");
-        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://10.224.41.14:5000/users/money"]];
-        
-        //set HTTP Method
-        [request setHTTPMethod:@"POST"];
-        
-        //Implement request_body for send request here username and password set into the body.
-        NSString *request_body = [NSString stringWithFormat:@"Username=%@&Password=%@", appDelegate.acUsername, thePassword];
-        //set request body into HTTPBody.
-        [request setHTTPBody:[request_body dataUsingEncoding:NSUTF8StringEncoding]];
-        
-        //set request url to the NSURLConnection
-        NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-        [theConnection start];
-    }
-    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"RefreshTP" object:nil];    
 }
 
 -(void)connectionDidFinishLoading:(NSURLConnection *)connection
@@ -136,7 +150,7 @@
                                                        delegate:nil
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles: nil];
-        [alert show];
+        //[alert show];
         account = @"No";
         [username becomeFirstResponder];
     }
