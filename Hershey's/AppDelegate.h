@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate> {
+    NSURLConnection *totalPoint, *facebookAdd;
+}
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) NSString *acUsername, *acPassword, *totalPoints, *account;
 
 @end

@@ -37,6 +37,16 @@
 		FA08E81117A4528700EA989B /* CXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = FA08E80117A4528700EA989B /* CXMLNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FA08E81217A4528700EA989B /* CTidy.m in Sources */ = {isa = PBXBuildFile; fileRef = FA08E80417A4528700EA989B /* CTidy.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FA08E81417A45A3B00EA989B /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FA08E81317A45A3B00EA989B /* libxml2.dylib */; };
+		FA08E82117A48DCA00EA989B /* IntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA08E82017A48DCA00EA989B /* IntroViewController.m */; };
+		FAD566D917A4A7A3004BE69C /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = FAD566D317A4A7A3004BE69C /* facebook.png */; };
+		FAD566DA17A4A7A3004BE69C /* facebookHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = FAD566D417A4A7A3004BE69C /* facebookHighlight.png */; };
+		FAD566DB17A4A7A3004BE69C /* Instagram.png in Resources */ = {isa = PBXBuildFile; fileRef = FAD566D517A4A7A3004BE69C /* Instagram.png */; };
+		FAD566DC17A4A7A3004BE69C /* InstagramHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = FAD566D617A4A7A3004BE69C /* InstagramHighlight.png */; };
+		FAD566DD17A4A7A3004BE69C /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = FAD566D717A4A7A3004BE69C /* twitter.png */; };
+		FAD566DE17A4A7A3004BE69C /* twitterHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = FAD566D817A4A7A3004BE69C /* twitterHighlight.png */; };
+		FAD566E117A4A97A004BE69C /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD566E017A4A97A004BE69C /* ShareViewController.m */; };
+		FAD566E317A4A9BA004BE69C /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD566E217A4A9BA004BE69C /* Social.framework */; };
+		FAD566EE17A4C3A8004BE69C /* MGInstagram.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD566ED17A4C3A8004BE69C /* MGInstagram.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +110,19 @@
 		FA08E80417A4528700EA989B /* CTidy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTidy.m; sourceTree = "<group>"; };
 		FA08E80517A4528700EA989B /* TouchXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchXML.h; sourceTree = "<group>"; };
 		FA08E81317A45A3B00EA989B /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		FA08E81F17A48DCA00EA989B /* IntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroViewController.h; sourceTree = "<group>"; };
+		FA08E82017A48DCA00EA989B /* IntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroViewController.m; sourceTree = "<group>"; };
+		FAD566D317A4A7A3004BE69C /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
+		FAD566D417A4A7A3004BE69C /* facebookHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebookHighlight.png; sourceTree = "<group>"; };
+		FAD566D517A4A7A3004BE69C /* Instagram.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Instagram.png; sourceTree = "<group>"; };
+		FAD566D617A4A7A3004BE69C /* InstagramHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = InstagramHighlight.png; sourceTree = "<group>"; };
+		FAD566D717A4A7A3004BE69C /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
+		FAD566D817A4A7A3004BE69C /* twitterHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitterHighlight.png; sourceTree = "<group>"; };
+		FAD566DF17A4A97A004BE69C /* ShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
+		FAD566E017A4A97A004BE69C /* ShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
+		FAD566E217A4A9BA004BE69C /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		FAD566EC17A4C3A8004BE69C /* MGInstagram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGInstagram.h; sourceTree = "<group>"; };
+		FAD566ED17A4C3A8004BE69C /* MGInstagram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGInstagram.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +131,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA08E81417A45A3B00EA989B /* libxml2.dylib in Frameworks */,
+				FAD566E317A4A9BA004BE69C /* Social.framework in Frameworks */,
 				FA08E7AB17A437AB00EA989B /* UIKit.framework in Frameworks */,
 				FA08E7AD17A437AB00EA989B /* Foundation.framework in Frameworks */,
 				FA08E7AF17A437AB00EA989B /* CoreGraphics.framework in Frameworks */,
@@ -130,7 +154,6 @@
 		FA08E79E17A437AB00EA989B = {
 			isa = PBXGroup;
 			children = (
-				FA08E81317A45A3B00EA989B /* libxml2.dylib */,
 				FA08E7B017A437AB00EA989B /* Hershey's */,
 				FA08E7D717A437AB00EA989B /* Hershey'sTests */,
 				FA08E7A917A437AB00EA989B /* Frameworks */,
@@ -150,6 +173,8 @@
 		FA08E7A917A437AB00EA989B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FAD566E217A4A9BA004BE69C /* Social.framework */,
+				FA08E81317A45A3B00EA989B /* libxml2.dylib */,
 				FA08E7AA17A437AB00EA989B /* UIKit.framework */,
 				FA08E7AC17A437AB00EA989B /* Foundation.framework */,
 				FA08E7AE17A437AB00EA989B /* CoreGraphics.framework */,
@@ -164,8 +189,12 @@
 				FA08E7B917A437AB00EA989B /* AppDelegate.h */,
 				FA08E7BA17A437AB00EA989B /* AppDelegate.m */,
 				FA08E7C217A437AB00EA989B /* MainStoryboard_iPhone.storyboard */,
+				FA08E81F17A48DCA00EA989B /* IntroViewController.h */,
+				FA08E82017A48DCA00EA989B /* IntroViewController.m */,
 				FA08E7C817A437AB00EA989B /* ViewController.h */,
 				FA08E7C917A437AB00EA989B /* ViewController.m */,
+				FAD566DF17A4A97A004BE69C /* ShareViewController.h */,
+				FAD566E017A4A97A004BE69C /* ShareViewController.m */,
 				FA08E7B117A437AB00EA989B /* Supporting Files */,
 			);
 			path = "Hershey's";
@@ -174,6 +203,8 @@
 		FA08E7B117A437AB00EA989B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FAD566E417A4B4DB004BE69C /* Instagram */,
+				FAD566D217A4A792004BE69C /* Images */,
 				FA08E7E817A4526500EA989B /* TouchXML */,
 				FA08E7B217A437AB00EA989B /* Hershey's-Info.plist */,
 				FA08E7B317A437AB00EA989B /* InfoPlist.strings */,
@@ -255,6 +286,28 @@
 			path = Tidy;
 			sourceTree = "<group>";
 		};
+		FAD566D217A4A792004BE69C /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				FAD566D317A4A7A3004BE69C /* facebook.png */,
+				FAD566D417A4A7A3004BE69C /* facebookHighlight.png */,
+				FAD566D517A4A7A3004BE69C /* Instagram.png */,
+				FAD566D617A4A7A3004BE69C /* InstagramHighlight.png */,
+				FAD566D717A4A7A3004BE69C /* twitter.png */,
+				FAD566D817A4A7A3004BE69C /* twitterHighlight.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		FAD566E417A4B4DB004BE69C /* Instagram */ = {
+			isa = PBXGroup;
+			children = (
+				FAD566EC17A4C3A8004BE69C /* MGInstagram.h */,
+				FAD566ED17A4C3A8004BE69C /* MGInstagram.m */,
+			);
+			name = Instagram;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -331,6 +384,12 @@
 				FA08E7BF17A437AB00EA989B /* Default@2x.png in Resources */,
 				FA08E7C117A437AB00EA989B /* Default-568h@2x.png in Resources */,
 				FA08E7C417A437AB00EA989B /* MainStoryboard_iPhone.storyboard in Resources */,
+				FAD566D917A4A7A3004BE69C /* facebook.png in Resources */,
+				FAD566DA17A4A7A3004BE69C /* facebookHighlight.png in Resources */,
+				FAD566DB17A4A7A3004BE69C /* Instagram.png in Resources */,
+				FAD566DC17A4A7A3004BE69C /* InstagramHighlight.png in Resources */,
+				FAD566DD17A4A7A3004BE69C /* twitter.png in Resources */,
+				FAD566DE17A4A7A3004BE69C /* twitterHighlight.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,6 +440,9 @@
 				FA08E81017A4528700EA989B /* CXMLNode_XPathExtensions.m in Sources */,
 				FA08E81117A4528700EA989B /* CXMLNode.m in Sources */,
 				FA08E81217A4528700EA989B /* CTidy.m in Sources */,
+				FA08E82117A48DCA00EA989B /* IntroViewController.m in Sources */,
+				FAD566E117A4A97A004BE69C /* ShareViewController.m in Sources */,
+				FAD566EE17A4C3A8004BE69C /* MGInstagram.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -567,6 +629,7 @@
 				FA08E7E417A437AB00EA989B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FA08E7E517A437AB00EA989B /* Build configuration list for PBXNativeTarget "Hershey'sTests" */ = {
 			isa = XCConfigurationList;
@@ -575,6 +638,7 @@
 				FA08E7E717A437AB00EA989B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
