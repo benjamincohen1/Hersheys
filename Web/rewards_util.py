@@ -64,7 +64,7 @@ def get_possible_rewards(username):
 
 	print money
 
-	query = "SELECT * FROM rewards WHERE points_required < '"+str(money)+"'"
+	query = "SELECT * FROM rewards WHERE points_required <= '"+str(money)+"'"
 	print query
 
 	cur = g.db.execute(query)

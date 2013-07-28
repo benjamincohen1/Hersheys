@@ -124,6 +124,8 @@ def collect_rewards_near_user():
 	codes = collect(username, lat, lon)
 
 	return str(codes)+"\n"
+
+
 @app.route('/rewards/add_point', methods = ['POST', 'GET'])
 def add_point():
 	from rewards_util import drop_code_at_point
@@ -184,6 +186,9 @@ def make_points():
 
 	make()
 
-	return "DONE"
+	return "Dummy Points Sucessfully Added"
+
+
 if __name__ == '__main__':
+
 	app.run(host='0.0.0.0')
