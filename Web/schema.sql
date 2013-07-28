@@ -58,3 +58,17 @@ create table redeemed(
 	code VARCHAR not null,
 	redeem_date VARCHAR not null
 );
+
+drop table if exists rewards;
+create table rewards(
+	id integer primary key autoincrement,
+	name VARCHAR not null,
+	points_required INT not null
+);
+
+INSERT INTO rewards(name, points_required) VALUES
+	("Free chocolate bar", 25);
+INSERT INTO rewards(name, points_required) VALUES
+	("Free jumbo chocolate bar", 250);
+INSERT INTO rewards(name, points_required) VALUES
+	("New Owner", 500);

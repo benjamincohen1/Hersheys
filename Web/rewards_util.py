@@ -57,6 +57,20 @@ def redeem_reward_code(username, code):
 			return add_money(username, value)
 
 
+def get_possible_rewards(username):
+	from money_utils import get_cur_money
+
+	money = get_cur_money(username)
+
+	print money
+
+	query = "SELECT * FROM rewards WHERE points_required < '"+str(money)+"'"
+	print query
+
+	cur = g.db.execute(query)
+	total = [x[1] for x in cur.fetchall()]
+
+	return total
 
 def collect_rewards_near_user(username, lat, lon):
 	from money_utils import get_user_id

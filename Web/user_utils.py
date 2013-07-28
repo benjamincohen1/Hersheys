@@ -1,6 +1,9 @@
 import sqlite3
 import server
+import smtplib
+
 g = server.g
+
 
 def new_account(username, password):
 	global g

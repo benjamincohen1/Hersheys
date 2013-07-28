@@ -90,6 +90,17 @@ def redeem_code():
 
 	return str(status)
 
+
+@app.route('/redeem/view_options', methods = ['POST', 'GET'])
+def get_possible_rewards():
+	username = request.form['Username']
+
+	from rewards_util import get_possible_rewards
+
+	possibles = get_possible_rewards(username)
+	return str(possibles)+"\n"
+
+
 @app.route('/map')
 def map():
 	from rewards_util import get_all_rewards
