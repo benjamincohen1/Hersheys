@@ -50,3 +50,11 @@ create table facebook(
 	tweet_date VARCHAR not null,
 	facebook integer not null default 0
 );
+
+drop table if exists redeemed;
+create table redeemed(
+	id integer primary key autoincrement,
+	user_id integer not null,
+	code VARCHAR not null,
+	redeem_date VARCHAR not null
+);

@@ -8,17 +8,95 @@ import time
 g = server.g
 
 def redeem_reward_code(username, code):
+
 	value = get_point_value(code)
+	code = str(code)
 	print "REDEEMING CODE FOR "+str(value)+" POINTS"
 
-	from money_utils import add_money
+	from money_utils import add_money, get_user_id
+	from dateutil import parser
+	import datetime
 
-	return add_money(username, value)
+	user_id = get_user_id(str(username))
+
+	print user_id
+	if user_id == "FAILURE":
+		return "FAILURE"
+	query = "SELECT * FROM redeemed WHERE user_id = '"+str(user_id)+"' AND code = '"+str(code)+"'"
+
+	print query
+
+	cur = g.db.execute(query)
+	row = cur.fetchone()
+
+	if row == None:
+		values = (user_id, code, str(datetime.datetime.now()))
+		print values
+		query = "INSERT INTO redeemed(user_id, code, redeem_date) VALUES"\
+		 		 + str(values)
+
+		print query
+
+		g.db.execute(query)
+		g.db.commit()
+
+		return add_money(username, value)
+	else:
+		date = parser.parse(row[3])
+		cur_time = datetime.datetime.now()
+
+		delta = cur_time - date
+		print delta
+		if delta < datetime.timedelta(days = 7):
+			return "FAILURE"
+		else:
+			query = "UPDATE redeemed SET  redeem_date = '"+str(cur_time)+"'\
+					 WHERE user_id = '"+str(user_id)+"' AND code = '"+str(code)+"'"
+			g.db.execute(query)
+			g.db.commit()
+			return add_money(username, value)
+
+
+
+def collect_rewards_near_user(username, lat, lon):
+	from money_utils import get_user_id
+	user_id = get_user_id(username)
+	print "UID IS: "+str(user_id)
+	if user_id is None:
+		return "FAILURE"
+
+	#get points 
+	query = "SELECT * FROM mapped_rewards"
+
+	cur = g.db.execute(query)
+	codes = []
+
+	all_rewards = cur.fetchall()
+	loc = (float(lon), float(lat))
+	for reward in all_rewards:
+		new_loc = (float(reward[1]), float(reward[2]))
+		dist = haversine_distance(loc, new_loc)
+		print dist
+		if dist < 100:
+			print "GOT ONE"
+			codes.append(reward[3])
+
+	total = 0
+	print codes
+	print [get_point_value(x) for x in codes]
+	for code in codes:
+		redeem_reward_code(username, code)
+		total += get_point_value(code)
+
+		query = "DELETE FROM mapped_rewards where code = '"+str(code)+"'"
+		g.db.execute(query)
+		g.db.commit()
+	return total
 
 
 def get_point_value(code):
 	if not is_valid_code(code):
-		return "Bad Code"
+		return 0
 	else:
 		values = [10, 25, 50, 100]
 		one = [76, 64, 62, 86, 92, 99, 72, 112, 113, 80, 82, 79, 111, 85, 101, 87, 121]
@@ -43,7 +121,7 @@ def generate_code(value):
 	lists = [one, two, three, four]
 	primes = [x for x in range(45,123) if prime(x)]
 	threes = [x for x in range(45,123) if x % 3 == 0]
-	fours = [x for x in range(45,123) if x % 4 == 0]
+	fours = [x for x in range(45,123) if x % 4 == 0 and x != 90]
 
 	if value not in denominations:
 		return "False"
@@ -57,9 +135,14 @@ def generate_code(value):
 		code.append(random.sample(lists[denominations.index(value)], 1)[0])
 		for x in range(2):
 			code.append(random.sample(fours,1)[0])
+
+	for x in code:
+		if x == 92:
+			x = 90
 	codeStr = ""
 	for x in code:
 		codeStr += chr(x)
+
 	return codeStr
 
 def tweet_sent(username):
@@ -123,6 +206,7 @@ def tweet_sent(username):
 		g.db.commit()
 		return str(tweets)
 
+
 def facebook_sent(username):
 	from money_utils import add_money, get_user_id
 	import datetime, re
@@ -161,13 +245,13 @@ def facebook_sent(username):
 
 		delta = cur_time - d
 
-		if delta < datetime.timedelta(hours=1):
+		if delta < datetime.timedelta(seconds=1):
 			points_added = 0
-		elif delta < datetime.timedelta(hours=6):
+		elif delta < datetime.timedelta(seconds=6):
 			points_added = 5
-		elif delta < datetime.timedelta(hours=24):
+		elif delta < datetime.timedelta(seconds=24):
 			points_added = 10
-		elif delta < datetime.timedelta(hours=72):
+		elif delta < datetime.timedelta(seconds=72):
 			points_added = 15
 		else:
 			points_added = 25
@@ -234,7 +318,7 @@ def get_all_rewards():
 	query = "SELECT * FROM mapped_rewards"
 	print query
 	con = g.db.execute(query)
-	print "executed"
+
 	entries = con.fetchall()
 
 	r = []

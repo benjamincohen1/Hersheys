@@ -100,6 +100,19 @@ def map():
 
 	return render_template("map.html", **{'codes': rewards})
 
+@app.route('/map/collect', methods = ['POST', 'GET'])
+def collect_rewards_near_user():
+	print "HERE"
+	username = request.form['Username']
+
+	lat = request.form['lat']
+	lon = request.form['lon']
+	print lat, lon
+	from rewards_util import collect_rewards_near_user as collect
+
+	codes = collect(username, lat, lon)
+
+	return str(codes)+"\n"
 @app.route('/rewards/add_point', methods = ['POST', 'GET'])
 def add_point():
 	from rewards_util import drop_code_at_point
@@ -121,18 +134,18 @@ def remove_money():
 	return cur_money
 
 
-@app.route('/tweets/sent', methods = ['POST', 'GET'])
+@app.route('/twitter/sent', methods = ['POST', 'GET'])
 def tweet_sent():
-	from rewards_util import tweet_sent
+	from rewards_util import facebook_sent
 	username = request.form['Username']
 
-	points = tweet_sent(username)
+	points = facebook_sent(username)
 	print points
 	return points
 
 
 @app.route('/facebook/sent', methods = ['POST', 'GET'])
-def tweet_sent():
+def facebook_sent():
 	from rewards_util import facebook_sent
 	username = request.form['Username']
 
