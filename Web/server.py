@@ -121,7 +121,7 @@ def collect_rewards_near_user():
 	print lat, lon
 	from rewards_util import collect_rewards_near_user as collect
 
-	codes = collect(username, lat, lon)
+	codes = collect(username, lon, lat)
 
 	return str(codes)+"\n"
 
@@ -129,9 +129,14 @@ def collect_rewards_near_user():
 @app.route('/rewards/add_point', methods = ['POST', 'GET'])
 def add_point():
 	from rewards_util import drop_code_at_point
+	username = request.form['Username']
 	lat = request.form['lat']
 	lon = request.form['lon']
-	points = request.form['points']
+	# points = request.form['points']
+	points = 10
+
+	from money_utils import remove_money
+	remove_money(username, points)
 	return str(drop_code_at_point(lat, lon, points))
 
 
@@ -149,10 +154,10 @@ def remove_money():
 
 @app.route('/twitter/sent', methods = ['POST', 'GET'])
 def tweet_sent():
-	from rewards_util import facebook_sent
+	from rewards_util import tweet_sent
 	username = request.form['Username']
 
-	points = facebook_sent(username)
+	points = tweet_sent(username)
 	print points
 	return points
 

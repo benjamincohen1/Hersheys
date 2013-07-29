@@ -8,7 +8,10 @@ import time
 g = server.g
 
 def redeem_reward_code(username, code):
+	if not is_valid_code(code):
+		print "REDEEMING CODE FOR NO POINTS"
 
+		return 0
 	value = get_point_value(code)
 	code = str(code)
 	print "REDEEMING CODE FOR "+str(value)+" POINTS"
@@ -91,7 +94,7 @@ def collect_rewards_near_user(username, lat, lon):
 		new_loc = (float(reward[1]), float(reward[2]))
 		dist = haversine_distance(loc, new_loc)
 		print dist
-		if dist < 100:
+		if dist < .1:
 			print "GOT ONE"
 			codes.append(reward[3])
 
@@ -259,13 +262,13 @@ def facebook_sent(username):
 
 		delta = cur_time - d
 
-		if delta < datetime.timedelta(seconds=1):
+		if delta < datetime.timedelta(hours=1):
 			points_added = 0
-		elif delta < datetime.timedelta(seconds=6):
+		elif delta < datetime.timedelta(hours=6):
 			points_added = 5
-		elif delta < datetime.timedelta(seconds=24):
+		elif delta < datetime.timedelta(hours=24):
 			points_added = 10
-		elif delta < datetime.timedelta(seconds=72):
+		elif delta < datetime.timedelta(hours=72):
 			points_added = 15
 		else:
 			points_added = 25
@@ -315,7 +318,7 @@ def prime(x):
 def drop_code_at_point(lat, lon, points):
 	code = generate_code(int(points))
 	if code == "Bad Code":
-		return False
+		return str(False)
 	else:
 		values = (str(lat), str(lon), code)
 		query = "INSERT INTO mapped_rewards(lat, long, code) VALUES"\
@@ -324,7 +327,7 @@ def drop_code_at_point(lat, lon, points):
 		g.db.execute(query)
 		g.db.commit()
 
-		return True
+		return str(True)
 
 
 def get_all_rewards():
