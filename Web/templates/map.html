@@ -12,12 +12,25 @@
 
   <script src="http://cdn.leafletjs.com/leaflet-0.5/leaflet.js"></script>
 
+<form name="add_event" action="{{url_for('add_points')}}" method="POST">
+
+    <dl>
+      
+      <select name="city">
+    <option value="NY">New York</option>
+    <option value="SF">San Fransisco</option>
+
+    </select>
+
+      <dd><input type=submit value=Done>
+
+</form>
 
 
- <div id="map" style = "height : 800px; width: 1280px"></div>
+ <div id="map" style = "height : 600px; width: 1280px"></div>
 
    <script>
-      var map = L.map('map').setView(["40.753641", "-73.986652"], 5);  
+      var map = L.map('map').setView(["40", "-90"], 4);  
         L.tileLayer('http://{s}.tile.cloudmade.com/e7b61e61295a44a5b319ca0bd3150890/997/256/{z}/{x}/{y}.png', {
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
       // minZoom: 13 // 13
