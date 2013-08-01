@@ -25,7 +25,7 @@
 - (IBAction)redeemCode:(id)sender {
     redeemCode = YES;
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://10.224.41.14:5000/codes/redeem"]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://ec2-184-169-235-149.us-west-1.compute.amazonaws.com/codes/redeem"]];
     
     //set HTTP Method
     [request setHTTPMethod:@"POST"];
@@ -43,7 +43,7 @@
 - (IBAction)removeFifty:(id)sender {
     redeemCode = NO;
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://10.224.41.14:5000/money/remove"]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://ec2-184-169-235-149.us-west-1.compute.amazonaws.com/money/remove"]];
     
     //set HTTP Method
     [request setHTTPMethod:@"POST"];
@@ -61,7 +61,7 @@
 - (IBAction)removeHundred:(id)sender {
     redeemCode = NO;
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://10.224.41.14:5000/money/remove"]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://ec2-184-169-235-149.us-west-1.compute.amazonaws.com/money/remove"]];
     
     //set HTTP Method
     [request setHTTPMethod:@"POST"];
@@ -79,7 +79,7 @@
 - (IBAction)removeTwoFifty:(id)sender {
     redeemCode = NO;
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://10.224.41.14:5000/money/remove"]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://ec2-184-169-235-149.us-west-1.compute.amazonaws.com/money/remove"]];
     
     //set HTTP Method
     [request setHTTPMethod:@"POST"];

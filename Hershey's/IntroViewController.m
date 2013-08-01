@@ -14,7 +14,7 @@
 @end
 
 @implementation IntroViewController
-@synthesize username, password, animatedImageView;
+@synthesize username, password, scrollView, image3, image1, image2, image4, pageControl;
 
 - (void)viewDidLoad
 {
@@ -24,16 +24,33 @@
     password.delegate = self;
     NSString *quick = [defaults objectForKey:@"username"];
     if (quick.length > 4) {
-        NSLog(@"username %@", [defaults objectForKey:@"username"]);
+        NSLog(@"username %@", [defaults objectForKey:@"username"]); 
         username.hidden = YES;
         password.hidden = YES;
         theUsername = [defaults objectForKey:@"username"];
         thePassword = [defaults objectForKey:@"password"];
     }
-    animatedImageView.dataSource = self;
+    image1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ScrollView1.png"]];
+
+    image1.frame = CGRectMake(0, 0, 1280, 300);
+    [scrollView addSubview:image1];
+    scrollView.contentSize = CGSizeMake(1280, 300);
+    username.background = [UIImage imageNamed:@"usrpass.png"];
+    password.background = [UIImage imageNamed:@"usrpass.png"];
+    [pageControl addTarget:self action:@selector(changePage:) forControlEvents:UIControlEventValueChanged];
     imageArray = [NSArray arrayWithObjects:@"BGImage1", @"BGImage2", @"BGImage3", nil];
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+}
+
+- (IBAction)changePage:(id)sender {
+    CGFloat x = pageControl.currentPage * scrollView.frame.size.width;
+    [scrollView setContentOffset:CGPointMake(x, 0) animated:YES];
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)theScroll  {
+    NSInteger pageNumber = round(scrollView.contentOffset.x / 320);
+    pageControl.currentPage = pageNumber;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -62,7 +79,7 @@
 
 - (IBAction)newAccount:(id)sender {
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://10.224.41.14:5000/users/new"]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://ec2-184-169-235-149.us-west-1.compute.amazonaws.com/users/new"]];
     
     NSLog(@"New Account Username is: %@", appDelegate.acUsername);
     //set HTTP Method

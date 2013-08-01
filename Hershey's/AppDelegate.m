@@ -30,7 +30,7 @@
 
 
 - (void)refreshStats {
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://10.224.41.14:5000/users/money"]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://ec2-184-169-235-149.us-west-1.compute.amazonaws.com/users/money"]];
     
     NSLog(@"App Delegate %@", acUsername);
     //set HTTP Method
@@ -49,7 +49,7 @@
 }
 
 - (void)refreshTotal {
-    NSMutableURLRequest *request2 = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://10.224.41.14:5000/users/money"]];
+    NSMutableURLRequest *request2 = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://ec2-184-169-235-149.us-west-1.compute.amazonaws.com/users/money"]];
     NSLog(@"GFFFF Delegate %@", acUsername);
     //set HTTP Method
     [request2 setHTTPMethod:@"POST"];

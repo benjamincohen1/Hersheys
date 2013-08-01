@@ -46,7 +46,7 @@
                     if (result == SLComposeViewControllerResultCancelled) {
                     } else if (result == SLComposeViewControllerResultDone) {
                         // Do Something If Tweeted.
-                        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://10.224.41.14:5000/twitter/sent"]];
+                        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://ec2-184-169-235-149.us-west-1.compute.amazonaws.com/twitter/sent"]];
 
                         NSLog(@"GFFFF Delegate %@", appDelegate.acUsername);
                         //set HTTP Method
@@ -92,7 +92,7 @@
                     //  This means the user hit 'Send'
                 case SLComposeViewControllerResultDone:
                     NSLog(@"SENT");
-                    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://10.224.41.14:5000/facebook/sent"]];
+                    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://ec2-184-169-235-149.us-west-1.compute.amazonaws.com/facebook/sent"]];
                     NSLog(@"GFFFF Delegate %@", appDelegate.acUsername);
                     //set HTTP Method
                     [request setHTTPMethod:@"POST"];
@@ -144,7 +144,7 @@
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [picker dismissViewControllerAnimated:YES completion:^{
         if ([MGInstagram isAppInstalled] == YES) {
-            NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://10.224.41.14:5000/facebook/sent"]];
+            NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://ec2-184-169-235-149.us-west-1.compute.amazonaws.com/facebook/sent"]];
             NSLog(@"GFFFF Delegate %@", appDelegate.acUsername);
             //set HTTP Method
             [request setHTTPMethod:@"POST"];

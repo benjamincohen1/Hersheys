@@ -56,7 +56,7 @@
     
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     if ([DorC isEqualToString:@"Drop"]) {
-        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://10.224.41.14:5000/rewards/add_point"]];
+        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://ec2-184-169-235-149.us-west-1.compute.amazonaws.com/rewards/add_point"]];
         
         //set HTTP Method
         [request setHTTPMethod:@"POST"];
@@ -70,7 +70,7 @@
         NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
         [theConnection start];
     } else if ([DorC isEqualToString:@"Collect"]) {
-        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://10.224.41.14:5000/map/collect"]];
+        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://ec2-184-169-235-149.us-west-1.compute.amazonaws.com/map/collect"]];
         
         //set HTTP Method
         [request setHTTPMethod:@"POST"];
