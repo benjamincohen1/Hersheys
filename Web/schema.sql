@@ -27,14 +27,14 @@ create table mapped_rewards(
 	code VARCHAR not null
 );
 
-INSERT INTO mapped_rewards(lat, long, code) VALUES
-	("40.753641", "-73.986652", "55TfiT\");
+-- INSERT INTO mapped_rewards(lat, long, code) VALUES
+-- 	("40.753641", "-73.986652", "55TfiT\");
 
-INSERT INTO mapped_rewards(lat, long, code) VALUES
-	("42.753641", "-79.986652", "qC9]<p<");
+-- INSERT INTO mapped_rewards(lat, long, code) VALUES
+-- 	("42.753641", "-79.986652", "qC9]<p<");
 
-INSERT INTO mapped_rewards(lat, long, code) VALUES
-	("40.753541", "-73.986452", "IqZNa@D");
+-- INSERT INTO mapped_rewards(lat, long, code) VALUES
+-- 	("40.753541", "-73.986452", "IqZNa@D");
 
 
 drop table if exists tweets;
