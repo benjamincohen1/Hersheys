@@ -23,7 +23,7 @@ def make_in_city(city):
 		for x in range(50):
 
 			lon = random.uniform(40.7,40.9)
-			lat = random.uniform(-73.9,-74.1)
+			lat = random.uniform(-73.9,-74)
 			denoms = [10, 25, 50, 100]
 			code = generate_code(random.sample(denoms, 1)[0])
 

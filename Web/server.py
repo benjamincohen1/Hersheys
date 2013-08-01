@@ -176,8 +176,13 @@ def facebook_sent():
 def add_points():
 	from generate_points import make_in_city
 	make_in_city(request.form['city'])
-	
-	return redirect(url_for('map'))
+	from rewards_util import get_all_rewards
+
+	rewards = get_all_rewards()
+
+	codes = [str(x[2]) for x in rewards]
+	return render_template('map.html', **{'city': request.form['city'], 
+										  'codes': rewards})
 
 
 @app.route('/money/add', methods = ['POST', 'GET'])
