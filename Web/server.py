@@ -50,6 +50,16 @@ def authenticate():
 	password = hashlib.md5(request.form['Password']).hexdigest()
 	return authenticate(username, password)
 
+@app.route('/map/closest', methods = ['POST', 'GET'])
+def get_closest_points():
+	from rewards_util import closest
+	# lat = request.form['lat']
+	# lon = request.form['lon']
+
+	points = closest(lat, lon)
+	pointsString = ';'.join([str(x[0])+','+str(x[1]) for x in points])
+	return pointsString
+
 
 @app.route('/users/new', methods = ['POST', 'GET'])
 def add_user():
@@ -207,5 +217,5 @@ def make_points():
 
 
 if __name__ == '__main__':
-	app.run()
-	# app.run(host='0.0.0.0')
+	# app.run()
+	app.run(host='0.0.0.0')

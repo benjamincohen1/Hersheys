@@ -24,13 +24,13 @@
     password.delegate = self;
     NSString *quick = [defaults objectForKey:@"username"];
     if (quick.length > 4) {
-        NSLog(@"username %@", [defaults objectForKey:@"username"]); 
+        NSLog(@"username %@", [defaults objectForKey:@"username"]);
         theUsername = [defaults objectForKey:@"username"];
         thePassword = [defaults objectForKey:@"password"];
         [self performSegueWithIdentifier:@"DoneAccount" sender:self];
     }
     image1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ScrollView1.png"]];
-
+    
     image1.frame = CGRectMake(0, 0, 1280, 300);
     [scrollView addSubview:image1];
     scrollView.contentSize = CGSizeMake(1280, 300);
@@ -75,28 +75,6 @@
         } else {
             [self loginAccount:self];
         }
-    }
-    return YES;
-}
-
-
-- (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
-    NSString *whichText = [textField.placeholder stringByReplacingOccurrencesOfString:@"description: " withString:@""];
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    NSLog(@"Which Text: %@", whichText);
-    if ([whichText isEqualToString:@"username"]) {
-        theUsername = textField.text;
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        [defaults setObject:theUsername forKey:@"username"];
-        appDelegate.acUsername = theUsername;
-        NSLog(@"Username %@", theUsername);
-        [password becomeFirstResponder];
-    } else if ([whichText isEqualToString:@"password"]) {
-        thePassword = textField.text;
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        [defaults setObject:thePassword forKey:@"password"];
-        appDelegate.acPassword = thePassword;
-        NSLog(@"Password %@", thePassword);
     }
     return YES;
 }

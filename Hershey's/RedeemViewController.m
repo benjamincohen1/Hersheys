@@ -131,9 +131,11 @@
                                               cancelButtonTitle:@"I'm on it!"
                                               otherButtonTitles: nil];
         [alert show];
+        [self popBack:self];
     } else {
         [self popBack:self];
-        [[Kiip sharedInstance] saveMoment:@"Test Moment" withCompletionHandler:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"kiip" object:nil];
+        NSLog(@"kiip");
     }
 }
 

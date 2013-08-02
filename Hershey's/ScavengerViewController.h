@@ -12,7 +12,8 @@
 
 @interface ScavengerViewController : UIViewController <CLLocationManagerDelegate> {
     NSString *DorC;
-    NSURLConnection *closestConnection;
+    NSURLConnection *closestConnection, *dropConnection, *collectConnection;
+    float latitude, longitude;
 }
 
 @property (nonatomic,retain)  CLLocationManager *locationManager;

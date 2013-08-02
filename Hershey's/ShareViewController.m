@@ -48,7 +48,7 @@
                         // Do Something If Tweeted.
                         NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://ec2-184-169-235-149.us-west-1.compute.amazonaws.com/twitter/sent"]];
 
-                        NSLog(@"Tweet Delegate %@", appDelegate.acUsername);
+                        NSLog(@"GFFFF Delegate %@", appDelegate.acUsername);
                         //set HTTP Method
                         [request setHTTPMethod:@"POST"];
                         

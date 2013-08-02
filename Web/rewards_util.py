@@ -59,6 +59,22 @@ def redeem_reward_code(username, code):
 			g.db.commit()
 			return add_money(username, value)
 
+def closest(lat, lon):
+	import collections
+	rewards = get_all_rewards()
+	disances = {}
+	for r in rewards:
+		disances[haversine_distance((lat, lon), (r[0], r[1]))] = r
+	od = collections.OrderedDict(sorted(disances.items()))
+	c = 0
+	z = []
+	for x in od:
+		if c == 5:
+			return z
+		else:
+			z.append(od[x])
+			c+=1
+	return z
 
 def get_possible_rewards(username):
 	from money_utils import get_cur_money

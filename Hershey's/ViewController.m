@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "AppDelegate.h"
+#import <KiipSDK/KiipSDK.h>
 
 @interface ViewController ()
 
@@ -43,6 +44,7 @@
 	[scrollView scrollRectToVisible:CGRectMake(320,0,320,197) animated:NO];
 
     [self retrievePoints:self];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showKiipReward) name:@"kiip" object:nil];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -57,6 +59,10 @@
 - (void)refreshLabel {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     pointsLabel.text = [defaults objectForKey:@"points"];
+}
+
+- (void)showKiipReward {
+    [[Kiip sharedInstance] saveMoment:@"Test Moment" withCompletionHandler:nil];
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)sender {
@@ -141,19 +147,17 @@
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
     NSLog(@"heres data:%@", [NSString stringWithUTF8String:[data bytes]]);
-    [pointsLabel setText:[NSString stringWithUTF8String:[data bytes]]];
-    if ([[NSString stringWithUTF8String:[data bytes]] isEqualToString:@"ACCOUNT NOT CREATED"]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Username Taken"
-                                                        message:@"The username has been taken. Please choose another one."
+    
+    if ([[NSString stringWithUTF8String:[data bytes]] isEqualToString:@"FAILURE"]) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Negative Points"
+                                                        message:@"Accounts can't have negative points. The '-' button removes 10 points. '+' adds 15. PROTOTYPE ONLY FEATURE!"
                                                        delegate:nil
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles: nil];
-        //[alert show];
-        account = @"No";
-        [username becomeFirstResponder];
+        [alert show];
+    } else {
+        [pointsLabel setText:[NSString stringWithUTF8String:[data bytes]]];
     }
-
-    [self retrievePoints:self];
 }
 
 - (void)didReceiveMemoryWarning

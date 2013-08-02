@@ -10,6 +10,11 @@
 		D74B048117AB242F00A6AADD /* reward.png in Resources */ = {isa = PBXBuildFile; fileRef = D74B048017AB242F00A6AADD /* reward.png */; };
 		D74B048317AB291A00A6AADD /* ScrollImage.png in Resources */ = {isa = PBXBuildFile; fileRef = D74B048217AB291A00A6AADD /* ScrollImage.png */; };
 		D74B048517AB2A4900A6AADD /* ScrollView1.png in Resources */ = {isa = PBXBuildFile; fileRef = D74B048417AB2A4900A6AADD /* ScrollView1.png */; };
+		D779C76B17ABE1010099D159 /* KiipSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D779C76A17ABE1010099D159 /* KiipSDKResources.bundle */; };
+		D779C76D17ABE9F00099D159 /* kiip-logo-round@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D779C76C17ABE9F00099D159 /* kiip-logo-round@2x.png */; };
+		D779C77017ABEE9B0099D159 /* dropOff.png in Resources */ = {isa = PBXBuildFile; fileRef = D779C76E17ABEE9B0099D159 /* dropOff.png */; };
+		D779C77117ABEE9B0099D159 /* pickup.png in Resources */ = {isa = PBXBuildFile; fileRef = D779C76F17ABEE9B0099D159 /* pickup.png */; };
+		D779C77317ABF15A0099D159 /* HersheyLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = D779C77217ABF15A0099D159 /* HersheyLogo.png */; };
 		D7929AC117AB08B400A9CD69 /* button1.png in Resources */ = {isa = PBXBuildFile; fileRef = D7929AC017AB08B400A9CD69 /* button1.png */; };
 		D7929AC517AB221F00A9CD69 /* grade.png in Resources */ = {isa = PBXBuildFile; fileRef = D7929AC417AB221F00A9CD69 /* grade.png */; };
 		D794FEF617AB048500AEA1F5 /* topView.png in Resources */ = {isa = PBXBuildFile; fileRef = D794FEF517AB048500AEA1F5 /* topView.png */; };
@@ -63,7 +68,7 @@
 		FAD566E317A4A9BA004BE69C /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD566E217A4A9BA004BE69C /* Social.framework */; };
 		FAD566EE17A4C3A8004BE69C /* MGInstagram.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD566ED17A4C3A8004BE69C /* MGInstagram.m */; };
 		FADAA89217A50A5300775364 /* IntroUI_0007_Rectangle-1-copy.png in Resources */ = {isa = PBXBuildFile; fileRef = FADAA89117A50A5300775364 /* IntroUI_0007_Rectangle-1-copy.png */; };
-		FADAA89417A50A6300775364 /* IntroUI_0006_Hershey's76.png in Resources */ = {isa = PBXBuildFile; fileRef = FADAA89317A50A6300775364 /* IntroUI_0006_Hershey's76.png */; };
+		FADAA89417A50A6300775364 /* HersheyLogoWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = FADAA89317A50A6300775364 /* HersheyLogoWhite.png */; };
 		FADAA89617A50B3A00775364 /* usrpass.png in Resources */ = {isa = PBXBuildFile; fileRef = FADAA89517A50B3A00775364 /* usrpass.png */; };
 		FADAA89817A50B9C00775364 /* createAccount.png in Resources */ = {isa = PBXBuildFile; fileRef = FADAA89717A50B9C00775364 /* createAccount.png */; };
 		FADAA89A17A50CA100775364 /* twitterBG.png in Resources */ = {isa = PBXBuildFile; fileRef = FADAA89917A50CA100775364 /* twitterBG.png */; };
@@ -103,6 +108,11 @@
 		D74B048017AB242F00A6AADD /* reward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reward.png; sourceTree = "<group>"; };
 		D74B048217AB291A00A6AADD /* ScrollImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScrollImage.png; sourceTree = "<group>"; };
 		D74B048417AB2A4900A6AADD /* ScrollView1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScrollView1.png; sourceTree = "<group>"; };
+		D779C76A17ABE1010099D159 /* KiipSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = KiipSDKResources.bundle; sourceTree = "<group>"; };
+		D779C76C17ABE9F00099D159 /* kiip-logo-round@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "kiip-logo-round@2x.png"; sourceTree = "<group>"; };
+		D779C76E17ABEE9B0099D159 /* dropOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dropOff.png; sourceTree = "<group>"; };
+		D779C76F17ABEE9B0099D159 /* pickup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pickup.png; sourceTree = "<group>"; };
+		D779C77217ABF15A0099D159 /* HersheyLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HersheyLogo.png; sourceTree = "<group>"; };
 		D7929AC017AB08B400A9CD69 /* button1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button1.png; sourceTree = "<group>"; };
 		D7929AC417AB221F00A9CD69 /* grade.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grade.png; sourceTree = "<group>"; };
 		D794FEF517AB048500AEA1F5 /* topView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topView.png; sourceTree = "<group>"; };
@@ -180,7 +190,7 @@
 		FAD566EC17A4C3A8004BE69C /* MGInstagram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGInstagram.h; sourceTree = "<group>"; };
 		FAD566ED17A4C3A8004BE69C /* MGInstagram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGInstagram.m; sourceTree = "<group>"; };
 		FADAA89117A50A5300775364 /* IntroUI_0007_Rectangle-1-copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IntroUI_0007_Rectangle-1-copy.png"; sourceTree = "<group>"; };
-		FADAA89317A50A6300775364 /* IntroUI_0006_Hershey's76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IntroUI_0006_Hershey's76.png"; sourceTree = "<group>"; };
+		FADAA89317A50A6300775364 /* HersheyLogoWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HersheyLogoWhite.png; sourceTree = "<group>"; };
 		FADAA89517A50B3A00775364 /* usrpass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = usrpass.png; sourceTree = "<group>"; };
 		FADAA89717A50B9C00775364 /* createAccount.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = createAccount.png; sourceTree = "<group>"; };
 		FADAA89917A50CA100775364 /* twitterBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitterBG.png; sourceTree = "<group>"; };
@@ -264,6 +274,7 @@
 		FA08E7A917A437AB00EA989B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D779C76A17ABE1010099D159 /* KiipSDKResources.bundle */,
 				D79FAE9317AB6B7C001B3E63 /* SystemConfiguration.framework */,
 				D79FAE9117AB6B76001B3E63 /* QuartzCore.framework */,
 				D79FAE8F17AB6B6E001B3E63 /* CoreTelephony.framework */,
@@ -418,6 +429,10 @@
 		FADAA89017A50A2C00775364 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				D779C77217ABF15A0099D159 /* HersheyLogo.png */,
+				D779C76E17ABEE9B0099D159 /* dropOff.png */,
+				D779C76F17ABEE9B0099D159 /* pickup.png */,
+				D779C76C17ABE9F00099D159 /* kiip-logo-round@2x.png */,
 				D79FAE8817AB651F001B3E63 /* kiipSocial.png */,
 				D79FAE8617AB5ED0001B3E63 /* Background.png */,
 				D74B048417AB2A4900A6AADD /* ScrollView1.png */,
@@ -445,7 +460,7 @@
 				FADAA89917A50CA100775364 /* twitterBG.png */,
 				FADAA89717A50B9C00775364 /* createAccount.png */,
 				FADAA89517A50B3A00775364 /* usrpass.png */,
-				FADAA89317A50A6300775364 /* IntroUI_0006_Hershey's76.png */,
+				FADAA89317A50A6300775364 /* HersheyLogoWhite.png */,
 				FADAA89117A50A5300775364 /* IntroUI_0007_Rectangle-1-copy.png */,
 			);
 			name = UI;
@@ -551,7 +566,7 @@
 				FAD566DD17A4A7A3004BE69C /* twitter.png in Resources */,
 				FAD566DE17A4A7A3004BE69C /* twitterHighlight.png in Resources */,
 				FADAA89217A50A5300775364 /* IntroUI_0007_Rectangle-1-copy.png in Resources */,
-				FADAA89417A50A6300775364 /* IntroUI_0006_Hershey's76.png in Resources */,
+				FADAA89417A50A6300775364 /* HersheyLogoWhite.png in Resources */,
 				FADAA89617A50B3A00775364 /* usrpass.png in Resources */,
 				FADAA89817A50B9C00775364 /* createAccount.png in Resources */,
 				FADAA89A17A50CA100775364 /* twitterBG.png in Resources */,
@@ -579,6 +594,11 @@
 				D74B048517AB2A4900A6AADD /* ScrollView1.png in Resources */,
 				D79FAE8717AB5ED0001B3E63 /* Background.png in Resources */,
 				D79FAE8917AB651F001B3E63 /* kiipSocial.png in Resources */,
+				D779C76B17ABE1010099D159 /* KiipSDKResources.bundle in Resources */,
+				D779C76D17ABE9F00099D159 /* kiip-logo-round@2x.png in Resources */,
+				D779C77017ABEE9B0099D159 /* dropOff.png in Resources */,
+				D779C77117ABEE9B0099D159 /* pickup.png in Resources */,
+				D779C77317ABF15A0099D159 /* HersheyLogo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
