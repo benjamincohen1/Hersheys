@@ -83,16 +83,13 @@
     [request setHTTPMethod:@"POST"];
     
     //Implement request_body for send request here username and password set into the body.
-    NSString *request_body = [NSString stringWithFormat:@"Username=%@&Ammount=0", appDelegate.acUsername];
+    NSString *request_body = [NSString stringWithFormat:@"Username=%@&Ammount=15", appDelegate.acUsername];
     //set request body into HTTPBody.
     [request setHTTPBody:[request_body dataUsingEncoding:NSUTF8StringEncoding]];
     
     //set request url to the NSURLConnection
     NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
     [theConnection start];
-    
-    [self refreshLabel];
-
 }
 
 - (IBAction)removePoints:(id)sender {
@@ -103,7 +100,7 @@
     [request setHTTPMethod:@"POST"];
     
     //Implement request_body for send request here username and password set into the body.
-    NSString *request_body = [NSString stringWithFormat:@"Username=%@&Ammount=10", appDelegate.acUsername];
+    NSString *request_body = [NSString stringWithFormat:@"Username=%@&Ammount=15", appDelegate.acUsername];
     //set request body into HTTPBody.
     [request setHTTPBody:[request_body dataUsingEncoding:NSUTF8StringEncoding]];
     
@@ -118,6 +115,7 @@
 
 -(void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
+    
     NSLog(@"Success!");
 }
 
@@ -155,7 +153,7 @@
         [username becomeFirstResponder];
     }
 
-    [self refreshLabel];
+    [self retrievePoints:self];
 }
 
 - (void)didReceiveMemoryWarning

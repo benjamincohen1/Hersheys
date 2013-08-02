@@ -8,6 +8,7 @@
 
 #import "RedeemViewController.h"
 #import "AppDelegate.h"
+#import <KiipSDK/KiipSDK.h>
 
 @interface RedeemViewController ()
 
@@ -94,6 +95,24 @@
     [theConnection start];
 }
 
+- (IBAction)removeFiveHundred:(id)sender {
+    redeemCode = NO;
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://ec2-184-169-235-149.us-west-1.compute.amazonaws.com/money/remove"]];
+    
+    //set HTTP Method
+    [request setHTTPMethod:@"POST"];
+    
+    //Implement request_body for send request here username and password set into the body.
+    NSString *request_body = [NSString stringWithFormat:@"Username=%@&Ammount=500", appDelegate.acUsername];
+    //set request body into HTTPBody.
+    [request setHTTPBody:[request_body dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    //set request url to the NSURLConnection
+    NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    [theConnection start];
+}
+
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
     if (redeemCode == YES) {
@@ -105,7 +124,6 @@
         [defaults setObject:[NSString stringWithUTF8String:[data bytes]] forKey:@"pointsRemoved"];
     }
     [[NSNotificationCenter defaultCenter] postNotificationName:@"RefreshTP" object:nil];
-    [self performSegueWithIdentifier:@"RedeemBack" sender:self];
     if ([[NSString stringWithUTF8String:[data bytes]] isEqualToString:@"FAILURE"]) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops!"
                                                         message:@"You don't have enough points! Share a little more love and get some more."
@@ -113,9 +131,15 @@
                                               cancelButtonTitle:@"I'm on it!"
                                               otherButtonTitles: nil];
         [alert show];
+    } else {
+        [self popBack:self];
+        [[Kiip sharedInstance] saveMoment:@"Test Moment" withCompletionHandler:nil];
     }
 }
 
+- (IBAction)popBack:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 - (void)didReceiveMemoryWarning
 {

@@ -80,6 +80,28 @@
 }
 
 
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
+    NSString *whichText = [textField.placeholder stringByReplacingOccurrencesOfString:@"description: " withString:@""];
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSLog(@"Which Text: %@", whichText);
+    if ([whichText isEqualToString:@"username"]) {
+        theUsername = textField.text;
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:theUsername forKey:@"username"];
+        appDelegate.acUsername = theUsername;
+        NSLog(@"Username %@", theUsername);
+        [password becomeFirstResponder];
+    } else if ([whichText isEqualToString:@"password"]) {
+        thePassword = textField.text;
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:thePassword forKey:@"password"];
+        appDelegate.acPassword = thePassword;
+        NSLog(@"Password %@", thePassword);
+    }
+    return YES;
+}
+
+
 - (IBAction)newAccount:(id)sender {
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://ec2-184-169-235-149.us-west-1.compute.amazonaws.com/users/new"]];

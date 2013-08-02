@@ -129,6 +129,13 @@
     
 }
 
+- (IBAction)dismissView:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)popBack:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 - (IBAction)openInstagram:(id)sender {
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.delegate = self;
@@ -166,7 +173,7 @@
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
     [[NSNotificationCenter defaultCenter] postNotificationName:@"RefreshTP" object:nil];
-    [self performSegueWithIdentifier:@"GoBack" sender:self];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {

@@ -13,6 +13,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    Kiip *kiip = [[Kiip alloc] initWithAppKey:@"a1e4bece0a17a1a13cce774a5ca1f10a" andSecret:@"eeb15ac0472b6e045cb54d8c06ccf007"];
+    kiip.delegate = self;
+    [Kiip setSharedInstance:kiip];
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     acUsername = [defaults objectForKey:@"username"];
     acPassword = [defaults objectForKey:@"password"];
