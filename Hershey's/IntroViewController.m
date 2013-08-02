@@ -25,10 +25,9 @@
     NSString *quick = [defaults objectForKey:@"username"];
     if (quick.length > 4) {
         NSLog(@"username %@", [defaults objectForKey:@"username"]); 
-        username.hidden = YES;
-        password.hidden = YES;
         theUsername = [defaults objectForKey:@"username"];
         thePassword = [defaults objectForKey:@"password"];
+        [self performSegueWithIdentifier:@"DoneAccount" sender:self];
     }
     image1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ScrollView1.png"]];
 
@@ -71,7 +70,11 @@
         [defaults setObject:thePassword forKey:@"password"];
         appDelegate.acPassword = thePassword;
         NSLog(@"Password %@", thePassword);
-        [self newAccount:self];
+        if ([loginOrRegister isEqualToString:@"register"]) {
+            [self newAccount:self];
+        } else {
+            [self loginAccount:self];
+        }
     }
     return YES;
 }
@@ -95,8 +98,27 @@
     [theConnection start];
 }
 
+- (IBAction)loginAccount:(id)sender {
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://ec2-184-169-235-149.us-west-1.compute.amazonaws.com/users/authenticate"]];
+    
+    //set HTTP Method
+    [request setHTTPMethod:@"POST"];
+    
+    //Implement request_body for send request here username and password set into the body.
+    NSString *request_body = [NSString stringWithFormat:@"Username=%@&Password=%@", appDelegate.acUsername, appDelegate.acPassword];
+    //set request body into HTTPBody.
+    [request setHTTPBody:[request_body dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    //set request url to the NSURLConnection
+    NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    
+    [theConnection start];
+}
+
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     NSLog(@"heres data:%@", [NSString stringWithUTF8String:[data bytes]]);
     if ([[NSString stringWithUTF8String:[data bytes]] isEqualToString:@"ACCOUNT NOT CREATED"]) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Username Taken"
@@ -104,18 +126,50 @@
                                                        delegate:nil
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles: nil];
-        //[alert show];
+        [alert show];
         account = @"No";
         [username becomeFirstResponder];
+    } else if ([[NSString stringWithUTF8String:[data bytes]] isEqualToString:@"ACCOUNT CREATED"]) {
+        appDelegate.acUsername = username.text;
+        appDelegate.acPassword = password.text;
+        [self performSegueWithIdentifier:@"DoneAccount" sender:self];
+    } else if ([[NSString stringWithUTF8String:[data bytes]] isEqualToString:@"True"]) {
+        appDelegate.acUsername = username.text;
+        appDelegate.acPassword = password.text;
+        [self performSegueWithIdentifier:@"DoneAccount" sender:self];
+    } else if ([[NSString stringWithUTF8String:[data bytes]] isEqualToString:@"False"]) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Username/Password Incorrect"
+                                                        message:@"Oops! Your username or password is incorrect. Make sure everything's right and try again."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles: nil];
+        [alert show];
     }
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"AccountCreated" object:nil];
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    appDelegate.account = @"Yes";
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:@"Yes" forKey:@"account"];
-    [self performSegueWithIdentifier:@"DoneAccount" sender:self];
 }
 
+- (IBAction)registerPressed:(id)sender {
+    loginOrRegister = @"register";
+    [UIView animateWithDuration:1.0 animations:^{
+        scrollView.alpha = 0.0;
+        pageControl.alpha = 0.0;
+        username.alpha = 1.0;
+        password.alpha = 1.0;
+    } completion:^(BOOL finished) {
+        [username becomeFirstResponder];
+    }];
+}
+
+- (IBAction)loginPressed:(id)sender {
+    loginOrRegister = @"login";
+    [UIView animateWithDuration:1.0 animations:^{
+        scrollView.alpha = 0.0;
+        pageControl.alpha = 0.0;
+        username.alpha = 1.0;
+        password.alpha = 1.0;
+    } completion:^(BOOL finished) {
+        [username becomeFirstResponder];
+    }];
+}
 - (NSUInteger)animatedImagesNumberOfImages:(JSAnimatedImagesView *)animatedImagesView
 {
     return 3;

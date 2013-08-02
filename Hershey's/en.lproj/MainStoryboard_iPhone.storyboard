@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="13A510d" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="muT-1v-oXF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="13A524d" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="muT-1v-oXF">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -37,7 +37,7 @@
                                     <constraint firstAttribute="height" constant="472" id="80K-vc-rO1"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="center" minimumFontSize="17" background="usrpass.png" translatesAutoresizingMaskIntoConstraints="NO" id="Nh1-yk-Qrf">
+                            <textField opaque="NO" clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="center" minimumFontSize="17" background="usrpass.png" translatesAutoresizingMaskIntoConstraints="NO" id="Nh1-yk-Qrf">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="cN2-u4-EAu"/>
                                 </constraints>
@@ -47,13 +47,13 @@
                                     <outlet property="delegate" destination="cLY-A8-gjT" id="VUw-BD-U3F"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="username" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" background="usrpass.png" disabledBackground="usrpass.png" translatesAutoresizingMaskIntoConstraints="NO" id="JCS-9j-idU">
+                            <textField opaque="NO" clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="username" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" background="usrpass.png" disabledBackground="usrpass.png" translatesAutoresizingMaskIntoConstraints="NO" id="JCS-9j-idU">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="194" id="DWz-pn-s2f"/>
                                     <constraint firstAttribute="height" constant="44" id="lMR-Ec-0qm"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="cLY-A8-gjT" id="OVS-Bz-WTy"/>
                                 </connections>
@@ -71,6 +71,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginPressed:" destination="aDs-0V-8F4" eventType="touchUpInside" id="4h1-qE-ut2"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RRX-cu-H5Z">
                                 <constraints>
@@ -84,6 +87,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="registerPressed:" destination="aDs-0V-8F4" eventType="touchUpInside" id="uqS-MX-M3e"/>
+                                </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p3N-it-s1l">
                                 <connections>
@@ -102,26 +108,26 @@
                         <constraints>
                             <constraint firstItem="btt-9f-2yF" firstAttribute="bottom" secondItem="cLY-A8-gjT" secondAttribute="bottom" type="default" id="05P-1m-AKP"/>
                             <constraint firstAttribute="bottom" secondItem="oAZ-V9-Q5G" secondAttribute="bottom" constant="67" id="1tj-aq-1P1"/>
-                            <constraint firstItem="RRX-cu-H5Z" firstAttribute="centerX" secondItem="btt-9f-2yF" secondAttribute="centerX" type="default" id="3jw-WH-9FW"/>
-                            <constraint firstItem="JCS-9j-idU" firstAttribute="leading" secondItem="cLY-A8-gjT" secondAttribute="leading" constant="263" id="4QS-h8-atw"/>
+                            <constraint firstItem="JCS-9j-idU" firstAttribute="top" secondItem="cLY-A8-gjT" secondAttribute="top" constant="175" id="4h0-Rd-NAR"/>
                             <constraint firstItem="D0D-H2-kzz" firstAttribute="leading" secondItem="cLY-A8-gjT" secondAttribute="leading" type="default" id="4lS-Zo-MgR"/>
-                            <constraint firstItem="p3N-it-s1l" firstAttribute="top" secondItem="cLY-A8-gjT" secondAttribute="top" constant="66" id="6dY-D0-5eI"/>
-                            <constraint firstItem="Nh1-yk-Qrf" firstAttribute="top" secondItem="cLY-A8-gjT" secondAttribute="top" constant="37" id="8h0-ty-1Sj"/>
+                            <constraint firstItem="p3N-it-s1l" firstAttribute="top" secondItem="cLY-A8-gjT" secondAttribute="top" constant="66" id="4qJ-hG-fUc"/>
+                            <constraint firstItem="Nh1-yk-Qrf" firstAttribute="centerX" secondItem="oAZ-V9-Q5G" secondAttribute="centerX" type="default" id="73f-zb-ebr"/>
+                            <constraint firstItem="p3N-it-s1l" firstAttribute="trailing" secondItem="cLY-A8-gjT" secondAttribute="trailing" type="default" id="9Lb-U6-7hi"/>
                             <constraint firstItem="D0D-H2-kzz" firstAttribute="trailing" secondItem="cLY-A8-gjT" secondAttribute="trailing" type="default" id="F1z-na-2dS"/>
+                            <constraint firstItem="Nh1-yk-Qrf" firstAttribute="centerX" secondItem="C7o-Ld-tLB" secondAttribute="centerX" type="default" id="FXn-Ut-bKA"/>
                             <constraint firstItem="btt-9f-2yF" firstAttribute="trailing" secondItem="cLY-A8-gjT" secondAttribute="trailing" type="default" id="MnF-On-rQo"/>
-                            <constraint firstItem="JCS-9j-idU" firstAttribute="top" secondItem="cLY-A8-gjT" secondAttribute="top" type="default" id="NIY-ow-cc5"/>
-                            <constraint firstItem="C7o-Ld-tLB" firstAttribute="centerX" secondItem="oAZ-V9-Q5G" secondAttribute="centerX" type="default" id="aRj-fP-llf"/>
                             <constraint firstAttribute="bottom" secondItem="C7o-Ld-tLB" secondAttribute="bottom" constant="147" id="aac-ph-DcX"/>
+                            <constraint firstItem="p3N-it-s1l" firstAttribute="centerX" secondItem="Nh1-yk-Qrf" secondAttribute="centerX" type="default" id="aic-xS-MzW"/>
                             <constraint firstItem="Nh1-yk-Qrf" firstAttribute="leading" secondItem="JCS-9j-idU" secondAttribute="leading" type="default" id="bvg-VW-GQG"/>
                             <constraint firstItem="RRX-cu-H5Z" firstAttribute="leading" secondItem="oAZ-V9-Q5G" secondAttribute="leading" type="default" id="c4W-OC-KjW"/>
                             <constraint firstAttribute="bottom" secondItem="RRX-cu-H5Z" secondAttribute="bottom" constant="13" id="di4-wv-gbe"/>
                             <constraint firstItem="Nh1-yk-Qrf" firstAttribute="trailing" secondItem="JCS-9j-idU" secondAttribute="trailing" type="default" id="dqi-em-mYm"/>
-                            <constraint firstItem="p3N-it-s1l" firstAttribute="leading" secondItem="cLY-A8-gjT" secondAttribute="leading" type="default" id="fJH-gJ-utz"/>
-                            <constraint firstItem="p3N-it-s1l" firstAttribute="centerY" secondItem="D0D-H2-kzz" secondAttribute="centerY" type="default" id="m4G-Wx-OKr"/>
+                            <constraint firstItem="p3N-it-s1l" firstAttribute="leading" secondItem="cLY-A8-gjT" secondAttribute="leading" type="default" id="e7i-b8-Bek"/>
                             <constraint firstItem="RRX-cu-H5Z" firstAttribute="trailing" secondItem="oAZ-V9-Q5G" secondAttribute="trailing" type="default" id="nIw-gD-cpy"/>
-                            <constraint firstItem="p3N-it-s1l" firstAttribute="trailing" secondItem="cLY-A8-gjT" secondAttribute="trailing" type="default" id="pXw-Qj-jVe"/>
+                            <constraint firstItem="Nh1-yk-Qrf" firstAttribute="top" secondItem="cLY-A8-gjT" secondAttribute="top" constant="238" id="vWP-8n-Qsc"/>
                             <constraint firstItem="btt-9f-2yF" firstAttribute="leading" secondItem="cLY-A8-gjT" secondAttribute="leading" type="default" id="wDO-Yj-1UV"/>
                             <constraint firstItem="D0D-H2-kzz" firstAttribute="top" secondItem="cLY-A8-gjT" secondAttribute="top" constant="-20" id="wR1-Bz-Xca"/>
+                            <constraint firstItem="p3N-it-s1l" firstAttribute="centerY" secondItem="D0D-H2-kzz" secondAttribute="centerY" type="default" id="zKT-0k-bUC"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="GPo-BZ-S2r"/>
@@ -131,6 +137,7 @@
                         <outlet property="scrollView" destination="p3N-it-s1l" id="J6M-au-lWW"/>
                         <outlet property="username" destination="JCS-9j-idU" id="UcB-kB-nGo"/>
                         <outlet property="view" destination="cLY-A8-gjT" id="yJx-zr-ojO"/>
+                        <segue destination="2" kind="push" identifier="DoneAccount" id="8hE-Ya-2w7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5MU-gs-CC8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -235,10 +242,11 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZPv-dR-NbL">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="257" id="rub-xB-GOd"/>
+                                    <constraint firstAttribute="height" constant="274" id="qdQ-jJ-zvf"/>
+                                    <constraint firstAttribute="width" constant="343" id="yxA-aV-Tdc"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal">
+                                <state key="normal" backgroundImage="twitterBG.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -288,19 +296,18 @@
                         <constraints>
                             <constraint firstItem="pLB-vi-Hgz" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="01Y-P7-LlY"/>
                             <constraint firstItem="pLB-vi-Hgz" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="7lS-6f-zbG"/>
-                            <constraint firstItem="ZPv-dR-NbL" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="CXX-vb-rzH"/>
-                            <constraint firstItem="ZPv-dR-NbL" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="Jpx-Gx-5aY"/>
+                            <constraint firstItem="ZPv-dR-NbL" firstAttribute="top" secondItem="3" secondAttribute="top" constant="-6" id="E3J-yj-Jto"/>
                             <constraint firstItem="Ugg-e1-rXg" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="L3J-th-K5F"/>
-                            <constraint firstItem="GT7-vE-ByV" firstAttribute="centerX" secondItem="ZPv-dR-NbL" secondAttribute="centerX" type="default" id="QiJ-KH-x08"/>
+                            <constraint firstItem="cEq-DC-BSp" firstAttribute="centerX" secondItem="btb-se-sg3" secondAttribute="centerX" type="default" id="LdW-4T-Ydr"/>
+                            <constraint firstItem="btb-se-sg3" firstAttribute="top" secondItem="3" secondAttribute="top" constant="265" id="Ope-gc-oKl"/>
                             <constraint firstItem="cEq-DC-BSp" firstAttribute="top" secondItem="3" secondAttribute="top" constant="82" id="R1b-kI-cWr"/>
                             <constraint firstAttribute="bottom" secondItem="Ugg-e1-rXg" secondAttribute="bottom" constant="96" id="VPX-f9-ECx"/>
                             <constraint firstItem="GT7-vE-ByV" firstAttribute="top" secondItem="3" secondAttribute="top" constant="49" id="YK2-ZS-gA0"/>
-                            <constraint firstItem="btb-se-sg3" firstAttribute="top" secondItem="ZPv-dR-NbL" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="cyb-IU-omg"/>
                             <constraint firstItem="btb-se-sg3" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="fZ3-P2-fna"/>
                             <constraint firstItem="GT7-vE-ByV" firstAttribute="centerX" secondItem="cEq-DC-BSp" secondAttribute="centerX" type="default" id="g5x-fX-GQ3"/>
-                            <constraint firstItem="ZPv-dR-NbL" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="gMv-gf-rjD"/>
                             <constraint firstItem="pLB-vi-Hgz" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="hlh-77-tcw"/>
                             <constraint firstItem="Ugg-e1-rXg" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="iL3-mC-MvZ"/>
+                            <constraint firstItem="ZPv-dR-NbL" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="-13" id="kgm-H2-QTU"/>
                             <constraint firstItem="btb-se-sg3" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="lrj-En-6Nd"/>
                         </constraints>
                     </view>
@@ -663,6 +670,7 @@
         <image name="redBox.png" width="181" height="95"/>
         <image name="topView.png" width="642" height="943"/>
         <image name="twitter.png" width="660" height="240"/>
+        <image name="twitterBG.png" width="183" height="95"/>
         <image name="twitterHighlight.png" width="660" height="240"/>
         <image name="usrpass.png" width="405" height="98"/>
     </resources>
@@ -670,8 +678,6 @@
         <class className="IntroViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/IntroViewController.h"/>
             <relationships>
-                <relationship kind="action" name="changePage:"/>
-                <relationship kind="action" name="newAccount:"/>
                 <relationship kind="outlet" name="image1" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="image2" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="image3" candidateClass="UIImageView"/>
@@ -688,36 +694,22 @@
         <class className="RedeemViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RedeemViewController.h"/>
             <relationships>
-                <relationship kind="action" name="redeemCode:"/>
-                <relationship kind="action" name="removeFifty:"/>
-                <relationship kind="action" name="removeHundred:"/>
-                <relationship kind="action" name="removeTwoFifty:"/>
                 <relationship kind="outlet" name="codeTextfield" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="redeemButton" candidateClass="UIButton"/>
             </relationships>
         </class>
         <class className="ScavengerViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ScavengerViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="dropPoint:"/>
-                <relationship kind="action" name="pickUpPoint:"/>
-            </relationships>
         </class>
         <class className="ShareViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ShareViewController.h"/>
             <relationships>
-                <relationship kind="action" name="openInstagram:"/>
-                <relationship kind="action" name="openTheFacebook:"/>
-                <relationship kind="action" name="openTheTweet:"/>
                 <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
             </relationships>
         </class>
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
-                <relationship kind="action" name="addPoints:"/>
-                <relationship kind="action" name="removePoints:"/>
-                <relationship kind="action" name="retrievePoints:"/>
                 <relationship kind="outlet" name="addPTS" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="password" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="pointsLabel" candidateClass="UILabel"/>
@@ -734,7 +726,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="baE-AJ-8th"/>
-        <segue reference="z4F-s6-WoS"/>
+        <segue reference="8hE-Ya-2w7"/>
+        <segue reference="QEW-OZ-ygn"/>
     </inferredMetricsTieBreakers>
 </document>

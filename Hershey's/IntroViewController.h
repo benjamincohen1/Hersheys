@@ -10,7 +10,7 @@
 #import "JSAnimatedImagesView.h"
 
 @interface IntroViewController : UIViewController <UITextFieldDelegate, UIScrollViewDelegate> {
-    NSString *theUsername, *thePassword, *account;
+    NSString *theUsername, *thePassword, *account, *loginOrRegister;
     NSArray *imageArray;
 }
 

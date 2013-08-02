@@ -44,13 +44,12 @@
     //set request url to the NSURLConnection
     NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
     [theConnection start];
-    NSLog(@"Chek");
     
 }
 
 - (void)refreshTotal {
     NSMutableURLRequest *request2 = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://ec2-184-169-235-149.us-west-1.compute.amazonaws.com/users/money"]];
-    NSLog(@"GFFFF Delegate %@", acUsername);
+    NSLog(@"Refresh Total %@", acUsername);
     //set HTTP Method
     [request2 setHTTPMethod:@"POST"];
 
@@ -67,16 +66,12 @@
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
-    NSLog(@"Chek2");
-
+    NSLog(@"Total Points: %@", [NSString stringWithUTF8String:[data bytes]]);
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     totalPoints = [NSString stringWithUTF8String:[data bytes]];
     [defaults setObject:totalPoints forKey:@"points"];
-    NSLog(@"Chek3");
 
     [[NSNotificationCenter defaultCenter] postNotificationName:@"pointsRefreshed" object:nil];
-    NSLog(@"Chek4");
-
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
