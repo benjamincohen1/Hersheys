@@ -62,9 +62,10 @@ def redeem_reward_code(username, code):
 def closest(lat, lon):
 	import collections
 	rewards = get_all_rewards()
+	lat, lon = float(lat), float(lon)
 	disances = {}
 	for r in rewards:
-		disances[haversine_distance((lat, lon), (r[0], r[1]))] = r
+		disances[haversine_distance((lat, lon), (float(r[0]), float(r[1])))] = r
 	od = collections.OrderedDict(sorted(disances.items()))
 	c = 0
 	z = []

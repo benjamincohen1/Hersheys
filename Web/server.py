@@ -53,8 +53,8 @@ def authenticate():
 @app.route('/map/closest', methods = ['POST', 'GET'])
 def get_closest_points():
 	from rewards_util import closest
-	# lat = request.form['lat']
-	# lon = request.form['lon']
+	lat = float(request.form['lat'])
+	lon = (request.form['lon'])
 
 	points = closest(lat, lon)
 	pointsString = ';'.join([str(x[0])+','+str(x[1]) for x in points])
@@ -218,4 +218,4 @@ def make_points():
 
 if __name__ == '__main__':
 	# app.run()
-	app.run(host='0.0.0.0')
+	app.run(host='0.0.0.0', port = 80)
